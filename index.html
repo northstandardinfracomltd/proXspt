@@ -69,6 +69,22 @@
       height: 100%;
       overflow: hidden;
     }
+    
+    
+    a {
+  text-decoration: none;
+}
+
+    
+
+ 
+      ::selection {
+        background-color: #fff0; /* Couleur de fond de la sélection */
+      }
+
+      ::-moz-selection {
+        background-color: #fff0; /* Couleur de fond de la sélection pour Firefox */
+      }
 
     .container {
       display: flex;
@@ -421,6 +437,37 @@ margin: 0px;
 .sticky-top {
   position: relative; /* Pour que les boutons soient positionnés correctement */
 }
+    
+    
+    /* Cacher la flèche du select */
+select.urlang {
+  -webkit-appearance: none; /* Pour Safari / Chrome */
+  -moz-appearance: none;    /* Pour Firefox */
+  appearance: none;         /* Standard */
+  background: none;         /* Supprimer le background */
+  border: none;             /* Supprimer la bordure */
+  color: white;             /* Texte en blanc */
+  padding: 5px;             /* Optionnel, ajuster selon le besoin */
+  font-size: 16px;          /* Taille de la police */
+  cursor: pointer;
+}
+
+/* Optionnel: cacher la flèche sur Firefox */
+select.urlang::-ms-expand {
+  display: none; 
+}
+
+/* Centrer le texte verticalement */
+select.urlang {
+  display: inline-block;
+  line-height: 1.5;
+}
+
+/* Ajuster la taille du select si besoin */
+select.urlang {
+  width: auto;  /* Ajuster selon la taille désirée */
+  min-width: 100px; /* Par exemple */
+}
 
 #scroll-left,
 #scroll-right {
@@ -595,29 +642,41 @@ box-shadow: 55px 1px 22px 27px rgba(28,6,61,0.82);
     <button class="my-button">CUSTOM KIT SOLUTIONS</button>
 </a>
         
-        <a href="https://example.com">
-    <button class="my-button">Learn more</button>
-</a>
+
       </div>
       
+      
+            <p>
+        Welcome to LogiCyclist! <a href="#sitemap">Sitemap</a>,
+        <a href="#privacy">Privacy</a>, and <a href="#terms">Terms</a>, <a href="#terms">Franchise Informations</a>, <a href="#terms">Contact our staff</a>
+      </p>
 
-<a href="https://example.com">
-    <button class="my-button">Consulter cette page en Français</button>
-</a>
-      <a href="https://example.com">
-    <button class="my-button">Consultat la pagina en Espańol</button>
-</a>
-      
-          <a href="https://example.com">
-    <button class="my-button">Contact us</button>
-</a>
-      
-      <a href="https://example.com">
-    <button class="my-button">Franchsie information</button>
-</a>
-           <h2>Legal txt</h2>
-      
-    
+      <select class="urlang" id="language-select" name="language" onchange="redirectToPage()">
+  <option value="">Select Language</option>
+  <option value="en">English</option>
+  <option value="fr">Français</option>
+  <option value="es">Español</option>
+</select>
+
+<script>
+  function redirectToPage() {
+    const selectElement = document.getElementById('language-select');
+    const selectedValue = selectElement.value;
+
+    if (selectedValue) {
+      // Modifier les URLs pour correspondre aux pages que tu veux ouvrir
+      const urls = {
+        'en': 'https://example.com/en',
+        'fr': 'https://example.com/fr',
+        'es': 'https://example.com/es'
+      };
+
+      window.location.href = urls[selectedValue];
+    }
+  }
+</script>
+
+   
     </div>
   </div>
 
