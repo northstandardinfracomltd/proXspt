@@ -294,7 +294,10 @@
         .txt1 {
   color: white; /* Optionnel : changer la couleur du texte */
 }
-
+    
+.blur-text {
+    filter: blur(4px); /* Ajuste la valeur pour le niveau de flou désiré */
+}
     
   </style>
 </head>
@@ -341,7 +344,7 @@
     <img src="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Logo%20Logicyclist%202024.svg?v=1726749278492" alt="Logo">
   </div>
   
-  <div class="left-bottom">
+  <div class="left-bottom ">
     <h1 id="left-title">Titre gauche</h1>
     <h2 id="left-subtitle">Sous-titre gauche</h2>
   </div>
@@ -385,7 +388,10 @@
     <button class="my-button">Consultat la pagina en Espańol</button>
 </a>
       
-            
+          <a href="https://example.com">
+    <button class="my-button">Contact us</button>
+</a>
+      
       <a href="https://example.com">
     <button class="my-button">Franchsie information</button>
 </a>
@@ -413,8 +419,19 @@
       const color = this.getAttribute('data-color');
 
       // Met à jour le titre et le sous-titre dans left-bottom
-      document.getElementById('left-title').innerText = title;
-      document.getElementById('left-subtitle').innerText = text;
+      const titleElement = document.getElementById('left-title');
+      const subtitleElement = document.getElementById('left-subtitle');
+      titleElement.innerText = title;
+      subtitleElement.innerText = text;
+
+      // Ajouter la classe 'blur-text' pour 2 secondes
+      titleElement.classList.add('blur-text');
+      subtitleElement.classList.add('blur-text');
+
+      setTimeout(() => {
+        titleElement.classList.remove('blur-text');
+        subtitleElement.classList.remove('blur-text');
+      }, 1400);
 
       // Si l'image initiale est encore présente, on la masque
       if (!isInitialImageHidden) {
@@ -443,6 +460,7 @@
     });
   });
 </script>
+
 
 <script>
   document.querySelectorAll('.button-container button').forEach(button => {
