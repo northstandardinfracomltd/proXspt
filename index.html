@@ -10,6 +10,61 @@
       box-sizing: border-box;
     }
 
+    
+          @font-face {
+        font-family: logicyclist1;
+        font-weight: bold;
+        src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20more?v=1692822723823")
+          format("opentype");
+      }
+      @font-face {
+        font-family: logicyclist2;
+        src: url(https://d1ayxb9ooonjts.cloudfront.net/fc3fa84bad39c1906ab5f12edfeeda77.otf);
+      }
+      @font-face {
+        font-family: logicyclist3;
+        src: url(https://d1ayxb9ooonjts.cloudfront.net/847b2e2eaaeffe475d49ab8586ed0938.otf);
+      }
+      @font-face {
+        font-family: logicyclist4;
+        src: url(https://d1ayxb9ooonjts.cloudfront.net/ff059c404b36c9ba4b07629da5c63673.otf);
+      }
+      @font-face {
+        font-family: logicyclist5;
+        src: url(https://d1ayxb9ooonjts.cloudfront.net/80cc6392abe5652b5227ecff51ad2526.otf);
+      }
+
+      @font-face {
+        font-family: logicyclist6;
+        src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Secondary?v=1692806478312")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: logicyclist8;
+        src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Button?v=1692822927520")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: logicyclist9;
+        src: url("https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistSans-Medium.woff2?v=1721675422669")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: logicyclist10;
+        src: url("https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistSans-ExtraBold.woff2?v=1721675423228")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: logicyclist11;
+        src: url("https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistSans-Book.woff2?v=1721675423938")
+          format("opentype");
+      }
+    
+    
     html, body {
       height: 100%;
       overflow: hidden;
@@ -193,19 +248,29 @@
 /* Style pour les boutons scrollables (Button 1, Button 2, etc.) */
 .button-container a button {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 17px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #331b56;
   color: white;
-  border: none;
-  border-radius: 5px;
+  border: none !important;
+  border-radius: 90px;
   cursor: pointer;
-  font-size: 16px;
   white-space: nowrap;
+      font-size: 17px !important;
+  text-transform: uppercase;
+    font-family: "logicyclist10" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 35px;
+      margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .button-container a button:hover {
-  background-color: #0056b3;
+  background-color: color(display-p3 0 0.50588 0.94902);
+      box-shadow: 0 0 0px 4px #008eff38;
+    cursor: pointer;
+    transition-duration: 0s;
 }
 
 /* Style pour le bouton flottant "Voir" */
@@ -287,8 +352,10 @@
 
 
     .button-container button.clicked {
-  background-color: red; /* Couleur du bouton actif */
-  color: white; /* Optionnel : changer la couleur du texte */
+  background-color: color(display-p3 0 0.50588 0.94902);
+      box-shadow: 0 0 0px 4px #008eff38;
+    cursor: pointer;
+    transition-duration: 0s;
 }
     
         .txt1 {
@@ -351,9 +418,9 @@
 
   
 <div class="sticky-top">
-
+    <button id="scroll-left">Gauche</button>
   <div class="button-container">
-        <button id="scroll-left">Gauche</button>
+    
     <a class="txt1">Learn more about.. </a>
     <a href="#"><button id="button1" data-title="MyTitle1" data-text="This is my story about 1" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistIllustration9994.svg?v=1724419557653" data-color="linear-gradient(70deg, #046778, #02798D)">Button 1</button></a>
     <a href="#"><button id="button2" data-title="MyTitle2" data-text="This is my story about 2" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/CoffeeLogicyclist.svg?v=1722670792880" data-color="linear-gradient(70deg, #703cac, #b37cf1)">Button 2</button></a>
@@ -375,9 +442,9 @@
         <a href="#"><button id="button18" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">Button 18</button></a>
         <a href="#"><button id="button19" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">Button 19</button></a>
         <a href="#"><button id="button20" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">Button 20</button></a>
-     <button id="scroll-right">Droite</button>
+
   </div>
-  
+     <button id="scroll-right">Droite</button>  
 
   
 </div>
@@ -514,49 +581,7 @@
   
   
   
-  <script>
-  let isInitialImageHidden = false; // Variable pour suivre si l'image initiale est masquée
-
-  document.querySelectorAll('.button-container button').forEach(button => {
-    button.addEventListener('click', function () {
-      // Récupère les données du bouton cliqué
-      const title = this.getAttribute('data-title');
-      const text = this.getAttribute('data-text');
-      const image = this.getAttribute('data-image');
-      const color = this.getAttribute('data-color');
-
-      // Met à jour le titre et le sous-titre dans left-bottom
-      document.getElementById('left-title').innerText = title;
-      document.getElementById('left-subtitle').innerText = text;
-
-      // Si l'image initiale est encore présente, on la masque
-      if (!isInitialImageHidden) {
-        document.querySelector('.left-column').classList.add('hide-before'); // Masquer l'image de fond
-        isInitialImageHidden = true; // Marquer l'image initiale comme masquée
-      }
-
-      // Met à jour l'image de fond dans la div .background-image
-      document.querySelector('.background-image').style.backgroundImage = `url('${image}')`;
-
-      // Met à jour la couleur de fond de la .left-column
-      document.querySelector('.container').style.background = color; // Utiliser 'background' pour dégradé
-
-      // Afficher la barre de chargement
-      const loadingBar = document.getElementById('loading-bar');
-      loadingBar.style.display = 'block'; // Afficher la barre
-      loadingBar.style.width = '100%'; // Remplir la barre
-
-      // Masquer la barre après 1.4 secondes
-      setTimeout(() => {
-        loadingBar.style.width = '0%'; // Réinitialiser la barre
-        setTimeout(() => {
-          loadingBar.style.display = 'none'; // Masquer la barre
-        }, 0); // Temps pour la réinitialisation
-      }, 2000); // Temps d'affichage
-    });
-  });
-
-  // Gestion des boutons gauche et droite
+<script>
   const buttonContainer = document.querySelector('.button-container');
   const leftButton = document.getElementById('scroll-left');
   const rightButton = document.getElementById('scroll-right');
@@ -573,18 +598,22 @@
     rightButton.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'block';
   }
 
-  // Appeler la fonction au chargement et à chaque défilement
+  // Appeler la fonction pour mettre à jour la visibilité des boutons au chargement
   updateButtonVisibility();
-  buttonContainer.addEventListener('scroll', updateButtonVisibility);
 
   // Événements pour faire défiler à gauche et à droite
   leftButton.addEventListener('click', () => {
     buttonContainer.scrollBy({ left: -buttonContainer.clientWidth, behavior: 'smooth' });
+    updateButtonVisibility();
   });
 
   rightButton.addEventListener('click', () => {
     buttonContainer.scrollBy({ left: buttonContainer.clientWidth, behavior: 'smooth' });
+    updateButtonVisibility();
   });
+
+  // Ajouter un écouteur d'événement pour mettre à jour la visibilité lors du défilement
+  buttonContainer.addEventListener('scroll', updateButtonVisibility);
 </script>
 
 
