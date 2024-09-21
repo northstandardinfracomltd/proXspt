@@ -409,7 +409,7 @@ margin: 0px;
   left: 0;
   width: 100%;
   height: 3px; /* Épaisseur de la barre */
-  background-color: #00ff00; /* Couleur de la barre */
+  background-color: #8b3effc2; /* Couleur de la barre */
   z-index: 1000; /* Pour s'assurer qu'elle soit au-dessus de tout */
   animation: loadingAnimation 2s linear; /* Animation sur 1.4s */
 }
@@ -489,7 +489,7 @@ select.urlang {
 #scroll-right {
   
       font-size: 13.5px !important;
-    font-family: "logicyclist9" !important;
+    font-family: "logicyclist11" !important;
     font-weight: 400;
     letter-spacing: -0.1px;
   
@@ -738,11 +738,9 @@ margin-top: -20px !important;
       subtitleElement.innerText = text;
 
       // Ajouter la classe 'blur-text' pour 2 secondes
-      titleElement.classList.add('blur-text');
       subtitleElement.classList.add('blur-text');
 
       setTimeout(() => {
-        titleElement.classList.remove('blur-text');
         subtitleElement.classList.remove('blur-text');
       }, 1400);
 
