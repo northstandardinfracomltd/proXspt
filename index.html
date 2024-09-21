@@ -20,27 +20,7 @@
       height: 100vh;
     }
 
-    /* Left Column */
-    .left-column {
-      width: 55%;
-      background: red;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
 
-    .left-column::before {
-      content: "";
-      background: url('https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Car-Logicyclist.svg?v=1722670794814') no-repeat center center;
-      background-size: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 0;
-    }
 
     .logo {
       position: sticky;
@@ -57,7 +37,41 @@
       width: 250px;
       height: auto;
     }
+    
+    
+    
+    
+    
+    
+    /* Left Column */
+    .left-column {
+      width: 55%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+  height: 100vh;
+      
+  background-color: red;
+  background-image: url('https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistIllustration9994.svg?v=1724419557653'); /* Image par défaut */
+  background-size: cover;
+  background-position: center;
+  transition: background-color 0.5s ease, background-image 0.5s ease;
+    }
 
+    .left-column::before {
+      content: "";
+      background: url('https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Car-Logicyclist.svg?v=1722670794814') no-repeat center center;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+    
     .left-bottom {
       background: linear-gradient(0deg, black, transparent);
       z-index: 1;
@@ -65,6 +79,8 @@
       padding-bottom: 120px;
       position: sticky;
       bottom: 0;
+      
+
     }
 
     .left-bottom h1 {
@@ -213,21 +229,10 @@
 <div class="sticky-top">
   <div class="button-container">
     <a>Learn more about.. </a>
-    <a href="#"><button>Button 1</button></a>
-    <a href="#"><button>Button 2</button></a>
-    <a href="#"><button>Button 3</button></a>
-    <a href="#"><button>Button 4</button></a>
-    <a href="#"><button>Button 5</button></a>
-    <a href="#"><button>Button 6</button></a>
-    <a href="#"><button>Button 7</button></a>
-    <a href="#"><button>Button 8</button></a>
-    <a href="#"><button>Button 9</button></a>
-    <a href="#"><button>Button 10</button></a>
-    <a href="#"><button>Button 11</button></a>
-    <a href="#"><button>Button 12</button></a>
-    <a href="#"><button>Button 13</button></a>
-    <a href="#"><button>Button 14</button></a>
-    <a href="#"><button>Button 15</button></a>
+    <a href="#"><button id="button1" data-title="MyTitle1" data-text="This is my story about 1" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistIllustration9994.svg?v=1724419557653" data-color="linear-gradient(222deg, #ff8d90, #ee0007)">Button 1</button></a>
+    <a href="#"><button id="button2" data-title="MyTitle2" data-text="This is my story about 2" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistIllustration9994.svg?v=1724419557653" data-color="linear-gradient(222deg, #4c8dff, #0044ee)">Button 2</button></a>
+    <a href="#"><button id="button3" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistIllustration9994.svg?v=1724419557653" data-color="linear-gradient(222deg, #90ee90, #00ff00)">Button 3</button></a>
+    <!-- Ajoute autant de boutons que nécessaire avec des valeurs différentes -->
   </div>
 </div>
 
@@ -235,15 +240,15 @@
 
   <div class="container">
     <!-- Left Column -->
-    <div class="left-column">
-      <div class="logo">
-        <img src="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Logo%20Logicyclist%202024.svg?v=1726749278492" alt="Logo">
-      </div>
-      <div class="left-bottom">
-        <h1>Titre gauche</h1>
-        <h2>Sous-titre gauche</h2>
-      </div>
-    </div>
+<div class="left-column">
+  <div class="logo">
+    <img src="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Logo%20Logicyclist%202024.svg?v=1726749278492" alt="Logo">
+  </div>
+  <div class="left-bottom">
+    <h1 id="left-title">Titre gauche</h1>
+    <h2 id="left-subtitle">Sous-titre gauche</h2>
+  </div>
+</div>
 
     <!-- Right Column -->
     <div class="right-column">
@@ -276,7 +281,29 @@
 </div>
 
 
-  
+<script>
+  document.querySelectorAll('.button-container button').forEach(button => {
+    button.addEventListener('click', function () {
+      // Récupère les données du bouton cliqué
+      const title = this.getAttribute('data-title');
+      const text = this.getAttribute('data-text');
+      const image = this.getAttribute('data-image');
+      const color = this.getAttribute('data-color');
+      
+      // Met à jour le titre et le sous-titre dans left-bottom
+      document.getElementById('left-title').innerText = title;
+      document.getElementById('left-subtitle').innerText = text;
+      
+      // Change l'image de fond de la left-column directement
+      document.querySelector('.left-column').style.backgroundImage = `url('${image}')`;
+      
+      // Change la couleur de fond de la left-column
+      document.querySelector('.left-column').style.background = color;
+    });
+  });
+</script>
+
+
   
 </body>
 </html>
