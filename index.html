@@ -299,6 +299,50 @@
     filter: blur(4px); /* Ajuste la valeur pour le niveau de flou désiré */
 }
     
+    
+    
+    .button-container {
+  overflow-x: hidden; /* Masque la barre de défilement */
+  display: flex;
+  white-space: nowrap;
+}
+
+.button-container::-webkit-scrollbar {
+  display: none; /* Pour Chrome, Safari et Edge */
+}
+
+.button-container {
+  -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+  scrollbar-width: none; /* Pour Firefox */
+}
+
+    
+
+
+.sticky-top {
+  position: relative; /* Pour que les boutons soient positionnés correctement */
+}
+
+#scroll-left,
+#scroll-right {
+  position: absolute;
+  top: 10px; /* Ajuste la position verticale si nécessaire */
+  background-color: #f0f0f0; /* Style de fond */
+  border: none; /* Supprime la bordure */
+  padding: 10px 15px; /* Ajuste l'espacement */
+  cursor: pointer; /* Curseur pointeur */
+  z-index: 10; /* Pour qu'ils soient au-dessus des autres éléments */
+}
+
+#scroll-left {
+  left: 10px; /* Positionne à gauche */
+}
+
+#scroll-right {
+  right: 10px; /* Positionne à droite */
+}
+
+    
   </style>
 </head>
 <body>
@@ -307,7 +351,9 @@
 
   
 <div class="sticky-top">
+
   <div class="button-container">
+        <button id="scroll-left">Gauche</button>
     <a class="txt1">Learn more about.. </a>
     <a href="#"><button id="button1" data-title="MyTitle1" data-text="This is my story about 1" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistIllustration9994.svg?v=1724419557653" data-color="linear-gradient(70deg, #046778, #02798D)">Button 1</button></a>
     <a href="#"><button id="button2" data-title="MyTitle2" data-text="This is my story about 2" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/CoffeeLogicyclist.svg?v=1722670792880" data-color="linear-gradient(70deg, #703cac, #b37cf1)">Button 2</button></a>
@@ -329,7 +375,11 @@
         <a href="#"><button id="button18" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">Button 18</button></a>
         <a href="#"><button id="button19" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">Button 19</button></a>
         <a href="#"><button id="button20" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">Button 20</button></a>
+     <button id="scroll-right">Droite</button>
   </div>
+  
+
+  
 </div>
 
 
@@ -460,6 +510,83 @@
     });
   });
 </script>
+
+  
+  
+  
+  <script>
+  let isInitialImageHidden = false; // Variable pour suivre si l'image initiale est masquée
+
+  document.querySelectorAll('.button-container button').forEach(button => {
+    button.addEventListener('click', function () {
+      // Récupère les données du bouton cliqué
+      const title = this.getAttribute('data-title');
+      const text = this.getAttribute('data-text');
+      const image = this.getAttribute('data-image');
+      const color = this.getAttribute('data-color');
+
+      // Met à jour le titre et le sous-titre dans left-bottom
+      document.getElementById('left-title').innerText = title;
+      document.getElementById('left-subtitle').innerText = text;
+
+      // Si l'image initiale est encore présente, on la masque
+      if (!isInitialImageHidden) {
+        document.querySelector('.left-column').classList.add('hide-before'); // Masquer l'image de fond
+        isInitialImageHidden = true; // Marquer l'image initiale comme masquée
+      }
+
+      // Met à jour l'image de fond dans la div .background-image
+      document.querySelector('.background-image').style.backgroundImage = `url('${image}')`;
+
+      // Met à jour la couleur de fond de la .left-column
+      document.querySelector('.container').style.background = color; // Utiliser 'background' pour dégradé
+
+      // Afficher la barre de chargement
+      const loadingBar = document.getElementById('loading-bar');
+      loadingBar.style.display = 'block'; // Afficher la barre
+      loadingBar.style.width = '100%'; // Remplir la barre
+
+      // Masquer la barre après 1.4 secondes
+      setTimeout(() => {
+        loadingBar.style.width = '0%'; // Réinitialiser la barre
+        setTimeout(() => {
+          loadingBar.style.display = 'none'; // Masquer la barre
+        }, 0); // Temps pour la réinitialisation
+      }, 2000); // Temps d'affichage
+    });
+  });
+
+  // Gestion des boutons gauche et droite
+  const buttonContainer = document.querySelector('.button-container');
+  const leftButton = document.getElementById('scroll-left');
+  const rightButton = document.getElementById('scroll-right');
+
+  function updateButtonVisibility() {
+    const scrollLeft = buttonContainer.scrollLeft;
+    const scrollWidth = buttonContainer.scrollWidth;
+    const clientWidth = buttonContainer.clientWidth;
+
+    // Masquer le bouton gauche si on est tout à gauche
+    leftButton.style.display = scrollLeft === 0 ? 'none' : 'block';
+
+    // Masquer le bouton droit si on est tout à droite
+    rightButton.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'block';
+  }
+
+  // Appeler la fonction au chargement et à chaque défilement
+  updateButtonVisibility();
+  buttonContainer.addEventListener('scroll', updateButtonVisibility);
+
+  // Événements pour faire défiler à gauche et à droite
+  leftButton.addEventListener('click', () => {
+    buttonContainer.scrollBy({ left: -buttonContainer.clientWidth, behavior: 'smooth' });
+  });
+
+  rightButton.addEventListener('click', () => {
+    buttonContainer.scrollBy({ left: buttonContainer.clientWidth, behavior: 'smooth' });
+  });
+</script>
+
 
 
 <script>
