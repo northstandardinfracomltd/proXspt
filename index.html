@@ -126,7 +126,7 @@
       background: transparent;
       width: 45%;
       overflow-y: auto;
-      padding: 20px;
+      padding: 30px;
     }
     
         .subby {
@@ -180,7 +180,7 @@
 .sticky-top {
   position: sticky;
   top: 0;
-  background-color: #18191B;
+  background-color: #1C063D;
   padding: 10px;
   z-index: 2;
   overflow-x: auto;
@@ -284,6 +284,15 @@
 }
 
 
+    .button-container button.clicked {
+  background-color: red; /* Couleur du bouton actif */
+  color: white; /* Optionnel : changer la couleur du texte */
+}
+    
+        .txt1 {
+  color: white; /* Optionnel : changer la couleur du texte */
+}
+
     
   </style>
 </head>
@@ -294,7 +303,7 @@
   
 <div class="sticky-top">
   <div class="button-container">
-    <a>Learn more about.. </a>
+    <a class="txt1">Learn more about.. </a>
     <a href="#"><button id="button1" data-title="MyTitle1" data-text="This is my story about 1" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistIllustration9994.svg?v=1724419557653" data-color="linear-gradient(70deg, #046778, #02798D)">Button 1</button></a>
     <a href="#"><button id="button2" data-title="MyTitle2" data-text="This is my story about 2" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/CoffeeLogicyclist.svg?v=1722670792880" data-color="linear-gradient(70deg, #703cac, #b37cf1)">Button 2</button></a>
     <a href="#"><button id="button3" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">Button 3</button></a>
@@ -324,26 +333,34 @@
     <!-- Right Column -->
     <div class="right-column">
       <div class="content">
-        <h1>Book</h1>
+        <h1>Config your experience</h1>
         <h2>Sous-titre 1</h2>
-        <button>Button 1</button>
+<a href="https://example.com">
+    <button class="my-button">Book</button>
+</a>
         
               <div class="subcontent">
         <h2>Re/charge</h2>
-        <button>Button 1</button>
+        <a href="https://example.com">
+    <button class="my-button">Re/Charge</button>
+</a>
       </div>
         
         
       </div>
       <div class="content">
-        <h1>Re/Charge</h1>
+        <h1>Hotel and Resort Kit</h1>
         <h2>Sous-titre 2</h2>
-        <button>Button 2</button>
+<a href="https://example.com">
+    <button class="my-button">Learn more</button>
+</a>
       </div>
       <div class="content">
-        <h1>Business Solutions</h1>
+        <h1>Become a franchisee</h1>
         <h2>Sous-titre 3</h2>
-        <button>Button 3</button>
+<a href="https://example.com">
+    <button class="my-button">Franchsie information</button>
+</a>
       </div>
       
       
@@ -401,7 +418,19 @@
   });
 </script>
 
+<script>
+  document.querySelectorAll('.button-container button').forEach(button => {
+    button.addEventListener('click', function () {
+      // Retirer la classe 'clicked' de tous les boutons
+      document.querySelectorAll('.button-container button').forEach(btn => {
+        btn.classList.remove('clicked');
+      });
 
+      // Ajouter la classe 'clicked' au bouton cliqué
+      this.classList.add('clicked');
+    });
+  });
+</script>
 
 
 
