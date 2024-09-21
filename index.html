@@ -81,7 +81,7 @@
     .logo {
       position: sticky;
       top: 0;
-      background: linear-gradient(180deg, black, transparent);
+      background: linear-gradient(180deg, #1c063db3, transparent);
       z-index: 1;
       padding: 10px;
       display: flex;
@@ -395,18 +395,18 @@
 #scroll-left,
 #scroll-right {
   
-      font-size: 12px !important;
-    font-family: "logicyclist11" !important;
+      font-size: 13.5px !important;
+    font-family: "logicyclist9" !important;
     font-weight: 400;
-    letter-spacing: 0px;
+    letter-spacing: -0.1px;
   
-  
+  padding-bottom: 11px !important;
   position: absolute;
   top: 10px; /* Ajuste la position verticale si nécessaire */
   border: 1px solid #ffffff26; /* Supprime la bordure */
   padding: 10px 15px; /* Ajuste l'espacement */
   cursor: pointer; /* Curseur pointeur */
-  z-index: 10; /* Pour qu'ils soient au-dessus des autres éléments */
+  z-index: 100000; /* Pour qu'ils soient au-dessus des autres éléments */
   color: white;
   border-radius: 90px;
    background: rgba(255, 255, 255, 0.2); /* Fond semi-transparent */
@@ -423,6 +423,8 @@
     font-weight: 400;
     letter-spacing: 0px;
     margin-top: 21px;
+    padding-left: 30px;
+    padding-right: 30px;
     
     
     
@@ -442,6 +444,42 @@ box-shadow: 55px 1px 22px 27px rgba(28,6,61,0.82);
 }
 
     
+   .titleX {
+    margin: 20px 0 5px;
+    text-align: left;
+    font-size: 25px !important;
+    font-family: "logicyclist10" !important;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 26px;
+    cursor: default;
+    text-transform: uppercase;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: white;
+    padding-top: 30px;
+           text-shadow: 0px 1px 11px rgba(28,6,61,0.47);
+}
+    
+    .textX {
+    font-size: 1em;
+    margin: 0px;
+    text-align: left;
+    font-size: 19px !important;
+    font-family: "logicyclist11" !important;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    color: #ffffff !important;
+    line-height: 35px;
+    cursor: default;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+      text-shadow: 0px 1px 11px rgba(28,6,61,0.47);
+
+}
+    
   </style>
 </head>
 <body>
@@ -450,10 +488,10 @@ box-shadow: 55px 1px 22px 27px rgba(28,6,61,0.82);
 
   
 <div class="sticky-top">
-    <button id="scroll-left">Gauche</button>
+    <button id="scroll-left">Retour</button>
   <div class="button-container">
     
-    <a class="txt1">Learn more about.. </a>
+    <a class="txt1">All Perks and Services </a>
     <a href="#"><button id="button1" data-title="MyTitle1" data-text="This is my story about 1" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistIllustration9994.svg?v=1724419557653" data-color="linear-gradient(70deg, #046778, #02798D)">Button 1</button></a>
     <a href="#"><button id="button2" data-title="MyTitle2" data-text="This is my story about 2" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/CoffeeLogicyclist.svg?v=1722670792880" data-color="linear-gradient(70deg, #703cac, #b37cf1)">Button 2</button></a>
     <a href="#"><button id="button3" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">Button 3</button></a>
@@ -476,7 +514,7 @@ box-shadow: 55px 1px 22px 27px rgba(28,6,61,0.82);
         <a href="#"><button id="button20" data-title="MyTitle3" data-text="This is my story about 3" data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">Button 20</button></a>
 
   </div>
-     <button id="scroll-right">Droite</button>  
+     <button id="scroll-right">Dérouler</button>  
 
   
 </div>
@@ -493,9 +531,9 @@ box-shadow: 55px 1px 22px 27px rgba(28,6,61,0.82);
     <img src="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Logo%20Logicyclist%202024.svg?v=1726749278492" alt="Logo">
   </div>
   
-  <div class="left-bottom ">
-    <h1 id="left-title">Titre gauche</h1>
-    <h2 id="left-subtitle">Sous-titre gauche</h2>
+  <div class="left-bottom">
+    <h1 id="left-title" class="titleX">BIKE LOCKERS</h1>
+    <h2 id="left-subtitle" class="textX">This is not just a typical gym but a space for muscle strengthening. Working on all muscle chains to enhance strength, prevent injuries, and balance your power is essential for any athlete. You'll find a full range of necessary equipment, along with guide sheets for independent workouts, or you can choose a coach on demand for spontaneous or regular sessions.</h2>
   </div>
 </div>
 
