@@ -107,7 +107,8 @@
       cursor: pointer;
     }
     
-    .sticky-top {
+/* CSS pour la div avec les boutons */
+.sticky-top {
   position: sticky;
   top: 0;
   background-color: #f0f0f0;
@@ -115,31 +116,48 @@
   z-index: 2;
   overflow-x: auto;
   white-space: nowrap;
+  position: relative; /* Pour le positionnement du bouton "Voir" */
 }
 
-.button-container a {
+/* CSS pour les boutons scrollables */
+.button-container {
   display: inline-block;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: relative;
 }
 
-.button-container button {
-  padding: 10px 20px;
-  margin-right: 5px;
+/* Style pour le bouton "Voir" */
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
   background-color: #007bff;
   color: white;
+  padding: 10px 20px;
+  font-size: 16px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  white-space: nowrap;
+  z-index: 10;
 }
 
-.button-container button:hover {
+.scroll-button.left {
+  right: auto;
+  left: 10px;
+}
+
+.scroll-button:hover {
   background-color: #0056b3;
 }
 
+    
   </style>
 </head>
 <body>
   
-  <div class="sticky-top">
+<div class="sticky-top">
   <div class="button-container">
     <a href="#"><button>Button 1</button></a>
     <a href="#"><button>Button 2</button></a>
@@ -156,8 +174,10 @@
     <a href="#"><button>Button 13</button></a>
     <a href="#"><button>Button 14</button></a>
     <a href="#"><button>Button 15</button></a>
+    <button class="scroll-button" id="scroll-button">Voir</button>
   </div>
 </div>
+
 
 
   <div class="container">
@@ -217,5 +237,50 @@
     </div>
   </div>
 
+<script>
+  const buttonContainer = document.querySelector('.button-container');
+  const scrollButton = document.getElementById('scroll-button');
+  let scrollSpeed = 200; // Vitesse du défilement
+
+  // Fonction pour faire défiler à droite
+  function scrollRight() {
+    buttonContainer.scrollBy({ left: scrollSpeed, behavior: 'smooth' });
+
+    // Vérifie si on est à la fin du scroll pour basculer le bouton à gauche
+    setTimeout(() => {
+      if (buttonContainer.scrollLeft + buttonContainer.offsetWidth >= buttonContainer.scrollWidth) {
+        scrollButton.classList.add('left');
+        scrollButton.textContent = 'Voir';
+      }
+    }, 300);
+  }
+
+  // Fonction pour faire défiler à gauche
+  function scrollLeft() {
+    buttonContainer.scrollBy({ left: -scrollSpeed, behavior: 'smooth' });
+
+    // Vérifie si on est revenu au début pour replacer le bouton à droite
+    setTimeout(() => {
+      if (buttonContainer.scrollLeft === 0) {
+        scrollButton.classList.remove('left');
+        scrollButton.textContent = 'Voir';
+      }
+    }, 300);
+  }
+
+  // Gestion du clic sur le bouton "Voir"
+  scrollButton.addEventListener('click', () => {
+    if (scrollButton.classList.contains('left')) {
+      scrollLeft();
+    } else {
+      scrollRight();
+    }
+  });
+</script>
+
+
+
+  
+  
 </body>
 </html>
