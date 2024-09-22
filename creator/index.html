@@ -147,6 +147,36 @@ display: grid;
       font-size: 12px;
     }
     
+          .ENTRYCURVE {
+        width: 100%;
+        z-index: 1;
+      }
+    
+    
+        .zecontainer {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .zediv {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .zevisible {
+        opacity: 1;
+    }
+    .zechiffre {
+        font-size: 80px;
+        margin: 0;
+    }
+    .zesubtitle {
+        font-size: 20px;
+        margin: 0;
+    }
+    .zeparagraphe {
+        font-size: 14px;
+    }
     
   </style>
 </head>
@@ -168,8 +198,10 @@ display: grid;
     <div class="card visible-3" id="card-3"><p>Card 3 content</p></div>
     <div class="card visible-4" id="card-4"><p>Card 4 content</p></div>
   </div>
+    
+      <button class="next-button" onclick="showNextCard()">Next</button>
+    
   </div>
-  <button class="next-button" onclick="showNextCard()">Next</button>
 
   <script>
     let currentCard = 1; // Start from 1 to reflect the first card correctly
@@ -190,6 +222,12 @@ display: grid;
     }
   </script>
 
+  
+  
+      <img
+      class="ENTRYCURVE"
+      src="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/batard2.svg?v=1726863168161"
+    />
   
   
   
@@ -274,6 +312,76 @@ display: grid;
       </div>
     </div>
   </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="zecontainer" id="slideContainer">
+    <div class="zediv">
+        <h1 class="zechiffre" id="bigChiffre">100</h1>
+        <p class="zesubtitle" id="subtitle">What a nice number</p>
+    </div>
+    <div class="zeparagraphe" id="paragraph">Fix authentication issues that prevent your email from reaching the inbox and see who’s sending using your domains.</div>
+</div>
+  
+  
+  <script>
+    const slides = [
+        { chiffre: 100, subtitle: 'What a nice number', paragraph: 'Fix authentication issues that prevent your email from reaching the inbox and see who’s sending using your domains.' },
+        { chiffre: 10, subtitle: 'Small but powerful', paragraph: 'DMARC Digests makes it easy to identify email authentication issues causing DMARC failures and resolve problems.' },
+        { chiffre: 40000, subtitle: 'Mega number', paragraph: 'Find sources sending unauthenticated email and investigate SPF and DKIM.' }
+    ];
+
+    let currentIndex = 0;
+
+    function animateCounter(target, duration) {
+        let start = target === 40000 ? 38000 : 0; // Commencer à 38k pour le dernier chiffre
+        const end = target;
+        const range = end - start;
+        const increment = Math.ceil(range / (duration / 100));
+        let current = start;
+
+        const counter = setInterval(() => {
+            current += increment;
+            if (current >= end) {
+                current = end;
+                clearInterval(counter);
+            }
+            if (target === 40000) {
+                // Afficher uniquement 38k, 39k, 40k
+                document.getElementById('bigChiffre').textContent = (current / 1000).toFixed(0) + 'k';
+            } else {
+                document.getElementById('bigChiffre').textContent = current.toString();
+            }
+        }, 100);
+    }
+
+    function showSlide(index) {
+        const currentSlide = slides[index];
+        const div = document.querySelector('.zediv');
+
+        div.classList.remove('zevisible');
+
+        setTimeout(() => {
+            div.classList.add('zevisible');
+            animateCounter(currentSlide.chiffre, 2000);
+            document.getElementById('subtitle').textContent = currentSlide.subtitle;
+            document.getElementById('paragraph').textContent = currentSlide.paragraph;
+        }, 500);
+    }
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }, 5000); // Changer toutes les 5 secondes
+
+    showSlide(currentIndex);
+</script>
+
   
   
 </body>

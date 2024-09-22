@@ -1,147 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid Layout</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<!-- HTML -->
+<div class="zecontainer" id="slideContainer">
+    <div class="zediv">
+        <h1 class="zechiffre" id="bigChiffre">100</h1>
+        <p class="zesubtitle" id="subtitle">What a nice number</p>
+    </div>
+    <div class="zeparagraphe" id="paragraph">Fix authentication issues that prevent your email from reaching the inbox and see who’s sending using your domains.</div>
+</div>
+
+<!-- CSS -->
+<style>
+    .zecontainer {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .zediv {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .zevisible {
+        opacity: 1;
+    }
+    .zechiffre {
+        font-size: 80px;
+        margin: 0;
+    }
+    .zesubtitle {
+        font-size: 20px;
+        margin: 0;
+    }
+    .zeparagraphe {
+        font-size: 14px;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    const slides = [
+        { chiffre: 100, subtitle: 'What a nice number', paragraph: 'Fix authentication issues that prevent your email from reaching the inbox and see who’s sending using your domains.' },
+        { chiffre: 10, subtitle: 'Small but powerful', paragraph: 'DMARC Digests makes it easy to identify email authentication issues causing DMARC failures and resolve problems.' },
+        { chiffre: 40000, subtitle: 'Mega number', paragraph: 'Find sources sending unauthenticated email and investigate SPF and DKIM.' }
+    ];
+
+    let currentIndex = 0;
+
+    function animateCounter(target, duration) {
+        let start = target === 40000 ? 38000 : 0; // Commencer à 38k pour le dernier chiffre
+        const end = target;
+        const range = end - start;
+        const increment = Math.ceil(range / (duration / 100));
+        let current = start;
+
+        const counter = setInterval(() => {
+            current += increment;
+            if (current >= end) {
+                current = end;
+                clearInterval(counter);
+            }
+            if (target === 40000) {
+                // Afficher uniquement 38k, 39k, 40k
+                document.getElementById('bigChiffre').textContent = (current / 1000).toFixed(0) + 'k';
+            } else {
+                document.getElementById('bigChiffre').textContent = current.toString();
+            }
+        }, 100);
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
+    function showSlide(index) {
+        const currentSlide = slides[index];
+        const div = document.querySelector('.zediv');
+
+        div.classList.remove('zevisible');
+
+        setTimeout(() => {
+            div.classList.add('zevisible');
+            animateCounter(currentSlide.chiffre, 2000);
+            document.getElementById('subtitle').textContent = currentSlide.subtitle;
+            document.getElementById('paragraph').textContent = currentSlide.paragraph;
+        }, 500);
     }
 
-    .doggrid-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 20px;
-    }
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }, 5000); // Changer toutes les 5 secondes
 
-    .dogdiv {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .dogimage {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .dogparagraph {
-      margin: 10px 0;
-      font-size: 16px;
-    }
-
-    .dogtags {
-      display: flex;
-      justify-content: center;
-      gap: 5px;
-    }
-
-    .dogtag {
-      background-color: #007bff;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 15px;
-      font-size: 12px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="doggrid-container">
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/DedicatedDesk.avif?v=1727011024326" class="dogimage" alt="Image 1">
-      <p class="dogparagraph">This is a dummy text for item 1.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
-
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/DedicatedDesk.avif?v=1727011024326" class="dogimage" alt="Image 2">
-      <p class="dogparagraph">This is a dummy text for item 2.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
-
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/DedicatedDesk.avif?v=1727011024326" class="dogimage" alt="Image 3">
-      <p class="dogparagraph">This is a dummy text for item 3.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
-
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/DedicatedDesk.avif?v=1727011024326" class="dogimage" alt="Image 4">
-      <p class="dogparagraph">This is a dummy text for item 4.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
-
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/DedicatedDesk.avif?v=1727011024326" class="dogimage" alt="Image 5">
-      <p class="dogparagraph">This is a dummy text for item 5.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
-
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/DedicatedDesk.avif?v=1727011024326" class="dogimage" alt="Image 6">
-      <p class="dogparagraph">This is a dummy text for item 6.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
-
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/DedicatedDesk.avif?v=1727011024326" class="dogimage" alt="Image 7">
-      <p class="dogparagraph">This is a dummy text for item 7.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
-
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/DedicatedDesk.avif?v=1727011024326" class="dogimage" alt="Image 8">
-      <p class="dogparagraph">This is a dummy text for item 8.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // No JavaScript needed for this static grid layout
-  </script>
-
-</body>
-</html>
+    showSlide(currentIndex);
+</script>
