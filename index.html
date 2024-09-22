@@ -647,7 +647,125 @@ margin-top: -20px !important;
     width: 100% !important; /* Pour s'assurer qu'ils remplissent la largeur */
 }
 
+    
+     .cookie-consent-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0px 0px 50px -2px rgb(54 30 102 / 5%);
+        color: #ecf0f1;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99999999999;
+      }
 
+      .cookie-consent-text {
+        margin: 0;
+        max-width: 80%;
+
+        font-size: 1em;
+        margin: 5px 0 10px;
+        text-align: left;
+        font-size: 18px !important;
+        font-family: "logicyclist11" !important;
+        font-weight: 400;
+        letter-spacing: -0.2px;
+        color: #000;
+        line-height: 30px;
+        cursor: default;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .close-button {
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 14px;
+
+        height: 60px !important;
+        border: 1px solid #ec1c24 !important;
+        padding: 18px 30px 22px 30px !important;
+        background-color: #ec1d23 !important;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-family: "logicyclist10" !important;
+        font-weight: 100 !important;
+        letter-spacing: -0.2px !important;
+        font-size: 19px !important;
+        border-radius: 90px !important;
+      }
+
+      .close-button:hover {
+        box-shadow: 0 0 0px 4px #008eff38;
+        cursor: pointer;
+        transition-duration: 0s;
+        background-color: brown;
+        border: 1px solid brown !important;
+        color: #fff !important;
+      }
+      
+                    .science {
+        position: relative;
+    overflow: hidden;}
+            
+      .science:before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        90deg,
+        rgba(5, 240, 255, 0) 10%,
+        rgba(225, 198, 255, .2),
+        rgba(5, 240, 255, 0) 100%
+    );
+    top: 0;
+    left: -100px;
+    animation: shine 3s infinite linear; /* Animation */
+}
+      
+      @keyframes shine {
+    0% {left: -100px}
+    20% {left: 100%}
+    100% {left: 100%}
+}
+
+    
+                        .scienceX {
+        position: relative;
+    overflow: hidden;}
+            
+      .scienceX:before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        90deg,
+        rgba(5, 240, 255, 0) 10%,
+        rgba(225, 198, 255, .2),
+        rgba(5, 240, 255, 0) 100%
+    );
+    top: 0;
+    right: -100px;
+    animation: shineX 3s infinite linear; /* Animation */
+}
+      
+      @keyframes shineX {
+    0% {right: -100px}
+    20% {right: 100%}
+    100% {right: 100%}
+}
+    
+    
   </style>
 </head>
 <body>
@@ -656,7 +774,7 @@ margin-top: -20px !important;
 
   
 <div class="sticky-top">
-    <button id="scroll-left">Retour</button>
+    <button id="scroll-left" class="scienceX">Retour</button>
   <div class="button-container">
     
     <a class="txt1">All Perks and Services </a>
@@ -682,7 +800,7 @@ margin-top: -20px !important;
         <a href="#"><button id="button20" data-title="MyTitle3" data-text="The experience at our place often leads to great connections that might start over a coffee and continue up a mountain pass. Regardless of discipline, the cycling lifestyle or more generally the sporting philosophy is the soul of our establishment, whether you’re here to improve your performance, accomplish challenges, or simply for a sports-oriented trip." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/CommunityLogicyclist.svg?v=1725008032257" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">COMMUNITY</button></a>
 
   </div>
-     <button id="scroll-right">Dérouler</button>  
+     <button id="scroll-right" class="science">Dérouler</button>  
 
   
 </div>
@@ -882,7 +1000,25 @@ margin-top: -20px !important;
   });
 </script>
 
-
+    <div id="uniqueCookieConsentBanner" class="cookie-consent-banner">
+      <p class="cookie-consent-text">
+        Nous utilisons des cookies et des technologies similaires pour mémoriser
+        vos préférences et comprendre votre parcours. Nous stockons des données
+        dépersonnalisées pour obtenir des statistiques et améliorer la
+        performance de notre site — En utilisant saasduo.com, vous acceptez
+        l'utilisation de tous les cookies ainsi que notre politique de
+        confidentialité.
+      </p>
+      <button id="uniqueCloseButton" class="close-button">Fermer</button>
+    </div>
+    <script>
+      document
+        .getElementById("uniqueCloseButton")
+        .addEventListener("click", function () {
+          document.getElementById("uniqueCookieConsentBanner").style.display =
+            "none";
+        });
+    </script>
 
   
 </body>
