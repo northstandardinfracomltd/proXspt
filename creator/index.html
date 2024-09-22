@@ -20,7 +20,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       background-color: #f4f4f9;
       font-family: Arial, sans-serif;
     }
@@ -178,6 +177,34 @@ display: grid;
         font-size: 14px;
     }
     
+    
+            .faqdiv {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .faqtitle {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faqcontent {
+            display: none;
+            padding: 10px;
+        }
+        .faqbutton {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .faqbutton:hover {
+            background-color: #0056b3;
+        }
+    
   </style>
 </head>
 <body>
@@ -316,6 +343,10 @@ display: grid;
   
   
   
+        <img
+      class="ENTRYCURVE"
+      src="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/batard2.svg?v=1726863168161"
+    />
   
   
   
@@ -382,6 +413,63 @@ display: grid;
     showSlide(currentIndex);
 </script>
 
+  
+  
+  
+  
+  
+        <img
+      class="ENTRYCURVE"
+      src="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/batard2.svg?v=1726863168161"
+    />
+  
+  
+  
+  
+  
+  <div class="faqdiv">
+    <div class="faqtitle" onclick="toggleFAQ(this)">
+        Question 1 <button class="faqbutton">Voir</button>
+    </div>
+    <div class="faqcontent">Réponse à la question 1.</div>
+</div>
+
+<div class="faqdiv">
+    <div class="faqtitle" onclick="toggleFAQ(this)">
+        Question 2 <button class="faqbutton">Voir</button>
+    </div>
+    <div class="faqcontent">Réponse à la question 2.</div>
+</div>
+
+<div class="faqdiv">
+    <div class="faqtitle" onclick="toggleFAQ(this)">
+        Question 3 <button class="faqbutton">Voir</button>
+    </div>
+    <div class="faqcontent">Réponse à la question 3.</div>
+</div>
+
+<div class="faqdiv">
+    <div class="faqtitle" onclick="toggleFAQ(this)">
+        Question 4 <button class="faqbutton">Voir</button>
+    </div>
+    <div class="faqcontent">Réponse à la question 4.</div>
+</div>
+
+<script>
+    function toggleFAQ(element) {
+        const content = element.nextElementSibling;
+        const allContents = document.querySelectorAll('.faqcontent');
+
+        allContents.forEach((item) => {
+            if (item !== content) {
+                item.style.display = 'none';
+            }
+        });
+
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+  
   
   
 </body>
