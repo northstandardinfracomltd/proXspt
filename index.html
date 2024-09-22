@@ -653,10 +653,12 @@ margin-top: -20px !important;
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
         box-shadow: 0px 0px 50px -2px rgb(54 30 102 / 5%);
         color: #ecf0f1;
-        padding: 20px;
+        padding: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -665,16 +667,16 @@ margin-top: -20px !important;
 
       .cookie-consent-text {
         margin: 0;
-        max-width: 80%;
+        max-width: 85%;
 
         font-size: 1em;
         margin: 5px 0 10px;
         text-align: left;
-        font-size: 18px !important;
+        font-size: 16px !important;
         font-family: "logicyclist11" !important;
         font-weight: 400;
         letter-spacing: -0.2px;
-        color: #000;
+        color: #fff;
         line-height: 30px;
         cursor: default;
         padding-left: 15px;
@@ -684,23 +686,25 @@ margin-top: -20px !important;
       }
 
       .close-button {
-        color: #fff;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: 14px;
+        
+        
+    padding: 10px 25px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 100%);
+    color: white;
+    border: none !important;
+    border-radius: 90px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 17px !important;
+    text-transform: uppercase;
+    font-family: "logicyclist10" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 35px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+        
 
-        height: 60px !important;
-        border: 1px solid #ec1c24 !important;
-        padding: 18px 30px 22px 30px !important;
-        background-color: #ec1d23 !important;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        font-family: "logicyclist10" !important;
-        font-weight: 100 !important;
-        letter-spacing: -0.2px !important;
-        font-size: 19px !important;
-        border-radius: 90px !important;
       }
 
       .close-button:hover {
@@ -831,7 +835,7 @@ margin-top: -20px !important;
             <div class="content content1">
         <h2>You are a hotel or resort and wish to create a dedicated and optimized space for a sporting and cycling audience, use our expertise to think about and build your extension.</h2>
 <a href="https://example.com">
-    <button class="my-button">Custom Kit Solutions</button>
+    <button class="my-button">Custom Spaces Solutions</button>
 </a>
              </div>
       
@@ -1002,14 +1006,9 @@ margin-top: -20px !important;
 
     <div id="uniqueCookieConsentBanner" class="cookie-consent-banner">
       <p class="cookie-consent-text">
-        Nous utilisons des cookies et des technologies similaires pour mémoriser
-        vos préférences et comprendre votre parcours. Nous stockons des données
-        dépersonnalisées pour obtenir des statistiques et améliorer la
-        performance de notre site — En utilisant saasduo.com, vous acceptez
-        l'utilisation de tous les cookies ainsi que notre politique de
-        confidentialité.
+        We use cookies and similar technologies to store depersonalized data to obtain statistics and improve the performance of our site.
       </p>
-      <button id="uniqueCloseButton" class="close-button">Fermer</button>
+      <button id="uniqueCloseButton" class="close-button">Hide</button>
     </div>
     <script>
       document
