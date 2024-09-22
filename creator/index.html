@@ -70,21 +70,25 @@
     .card.visible-1 {
       z-index: 4;
       opacity: 1;
+      display: block;
       transform: translateY(0) scale(1) rotate(0deg);
     }
     .card.visible-2 {
       z-index: 3;
       opacity: 0.8;
+      display: block;
       transform: translateY(20px) scale(0.95) rotate(5deg);
     }
     .card.visible-3 {
       z-index: 2;
       opacity: 0.6;
+      display: block;
       transform: translateY(40px) scale(0.9) rotate(-5deg);
     }
     .card.visible-4 {
       z-index: 1;
       opacity: 0.4;
+      display: block;
       transform: translateY(60px) scale(0.85) rotate(10deg);
     }
 
@@ -205,9 +209,80 @@ display: grid;
             background-color: #0056b3;
         }
     
+    
+            .navbarDiv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: transparent;
+            position: sticky;
+            top: 0;
+            box-shadow: none;
+            z-index: 1000;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        .navbarLeft {
+            font-size: 1.5em;
+        }
+        .navbarRight {
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+        .navbarButton {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbarButton:hover {
+            background-color: #0056b3;
+        }
+        .navbarLink {
+            text-decoration: none;
+            color: #007BFF;
+            transition: color 0.3s;
+        }
+        .navbarLink:hover {
+            color: #0056b3;
+        }
+        /* Classe pour le fond gris clair */
+        .scrolled {
+            background: lightgrey;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+    
   </style>
 </head>
 <body>
+  
+      <div class="navbarDiv" id="navbar">
+        <div class="navbarLeft">Business Solutions</div>
+        <div class="navbarRight">
+
+            <a href="#process" class="navbarLink">Process</a>
+            <a href="#modules" class="navbarLink">Modules</a>
+            <a href="#faq" class="navbarLink">FAQ</a>
+            <a href="#contact" class="navbarLink">Contact</a>
+                      <button class="navbarButton">Call to Action</button>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
   
   
   
@@ -220,10 +295,10 @@ display: grid;
   
   <div class="unity">
   <div class="container">
-    <div class="card visible-1" id="card-1"><p>Card 1 content</p></div>
-    <div class="card visible-2" id="card-2"><p>Card 2 content</p></div>
-    <div class="card visible-3" id="card-3"><p>Card 3 content</p></div>
-    <div class="card visible-4" id="card-4"><p>Card 4 content</p></div>
+    <div class="card visible-1" id="card-1"><p>1</p><br><p>On-site Visit : We create Custom specific and optimized Cycling Spaces</p></div>
+    <div class="card visible-2" id="card-2"><p>2</p><br><p>Architect Draw : We create Custom specific and optimized Cycling Spaces</p></div>
+    <div class="card visible-3" id="card-3"><p>3</p><br><p>On-site build : We create Custom specific and optimized Cycling Spaces</p></div>
+    <div class="card visible-4" id="card-4"><p>4</p><br><p>Test and Maintenance : We create Custom specific and optimized Cycling Spaces</p></div>
   </div>
     
       <button class="next-button" onclick="showNextCard()">Next</button>
