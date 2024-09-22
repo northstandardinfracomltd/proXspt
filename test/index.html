@@ -3,116 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
-      background-color: #f4f4f9;
       font-family: Arial, sans-serif;
-    }
-    
-    
-    .unity {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f9;
-      font-family: Arial, sans-serif;
-    }
-    
-    
-    .container {
-      position: relative;
-      width: 100%;
-      max-width: 350px;
-      height: 220px;
-      margin-bottom: 40px; /* Leave space for the button */
-    }
-    .card {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      border-radius: 8px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       padding: 20px;
-      transition: transform 0.6s ease, opacity 0.6s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      transform: translateY(60px) scale(0.8); /* Initial state for lower cards */
-    }
-    .card p {
-      margin: 0;
-      font-size: 16px;
-      text-align: center;
-    }
-    /* Styles for each card */
-    .card:nth-child(1) {
-      background-color: #e57373;
-    }
-    .card:nth-child(2) {
-      background-color: #81c784;
-    }
-    .card:nth-child(3) {
-      background-color: #64b5f6;
-    }
-    .card:nth-child(4) {
-      background-color: #ffd54f;
     }
 
-    /* Style for visible cards */
-    .card.visible-1 {
-      z-index: 4;
-      opacity: 1;
-      transform: translateY(0) scale(1) rotate(0deg);
-    }
-    .card.visible-2 {
-      z-index: 3;
-      opacity: 0.8;
-      transform: translateY(20px) scale(0.95) rotate(5deg);
-    }
-    .card.visible-3 {
-      z-index: 2;
-      opacity: 0.6;
-      transform: translateY(40px) scale(0.9) rotate(-5deg);
-    }
-    .card.visible-4 {
-      z-index: 1;
-      opacity: 0.4;
-      transform: translateY(60px) scale(0.85) rotate(10deg);
-    }
-
-    .next-button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      background-color: #6200ea;
-      color: white;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-    .next-button:hover {
-      background-color: #3700b3;
-    }
-    
-        .doggrid-container {
-display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    max-width: 1200px;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    .doggrid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
     }
 
     .dogdiv {
@@ -146,53 +53,10 @@ display: grid;
       border-radius: 15px;
       font-size: 12px;
     }
-    
-    
   </style>
 </head>
 <body>
-  
-  
-  
-              <div class="content content1">
-        <h2>We create Custom specific and optimized Cycling Spaces</h2>
-              <p>Enhance strength, prevent injuries, and balance your power is essential for any athlete. You'll find a full range of necessary equipment, along with guide sheets for independent workouts.</p>
-             </div>
-  
-  
-  
-  <div class="unity">
-  <div class="container">
-    <div class="card visible-1" id="card-1"><p>Card 1 content</p></div>
-    <div class="card visible-2" id="card-2"><p>Card 2 content</p></div>
-    <div class="card visible-3" id="card-3"><p>Card 3 content</p></div>
-    <div class="card visible-4" id="card-4"><p>Card 4 content</p></div>
-  </div>
-  </div>
-  <button class="next-button" onclick="showNextCard()">Next</button>
 
-  <script>
-    let currentCard = 1; // Start from 1 to reflect the first card correctly
-    const totalCards = 4;
-
-    function showNextCard() {
-      // Update the current card index before updating classes
-      currentCard = (currentCard % totalCards) + 1;
-
-      // Update classes for visible cards
-      for (let i = 1; i <= totalCards; i++) {
-        const card = document.getElementById(`card-${i}`);
-        card.classList.remove(`visible-1`, `visible-2`, `visible-3`, `visible-4`);
-
-        let nextIndex = (i - currentCard + totalCards) % totalCards + 1;
-        card.classList.add(`visible-${nextIndex}`);
-      }
-    }
-  </script>
-
-  
-  
-  
   <div class="doggrid-container">
     <div class="dogdiv">
       <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/DedicatedDesk.avif?v=1727011024326" class="dogimage" alt="Image 1">
@@ -274,7 +138,10 @@ display: grid;
       </div>
     </div>
   </div>
-  
-  
+
+  <script>
+    // No JavaScript needed for this static grid layout
+  </script>
+
 </body>
 </html>
