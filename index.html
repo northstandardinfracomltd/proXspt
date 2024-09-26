@@ -64,6 +64,26 @@
           format("opentype");
       }
     
+    @font-face {
+font-family: logicyclist12;
+font-weight: bold;
+src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Secondary?v=1692806478312")
+format("opentype");
+}
+
+@font-face {
+font-family: logicyclist13;
+font-weight: bold;
+src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20more?v=1692822723823")
+format("opentype");
+}
+  
+@font-face {
+font-family: logicyclist14;
+font-weight: bold;
+src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Button?v=1692822927520")
+format("opentype");
+}
     
     html, body {
       height: 100%;
@@ -486,33 +506,35 @@ select.urlang {
 #scroll-left,
 #scroll-right {
   
-      font-size: 14px !important;
-    font-family: "logicyclist11" !important;
+    font-size: 16px !important;
+    font-family: "logicyclist13" !important;
     font-weight: 400;
-    letter-spacing: -0.1px;
-  
-  padding-bottom: 11px !important;
-  position: absolute;
-  top: 10px; /* Ajuste la position verticale si nécessaire */
-  border: 1px solid #454F54; /* Supprime la bordure */
-  padding: 10px 15px; /* Ajuste l'espacement */
-  cursor: pointer; /* Curseur pointeur */
-  z-index: 100000; /* Pour qu'ils soient au-dessus des autres éléments */
-  color: white;
-  border-radius: 90px;
-   background: #303B42; /* Fond semi-transparent */
-    backdrop-filter: blur(20px); /* Applique un flou sur l'arrière-plan */
-    -webkit-backdrop-filter: blur(20px); /* Support pour les anciens navigateurs WebKit */
-    margin-top: 0px;
-  margin-left: 5px;
-  margin-right: 5px;
-  box-shadow :var(--Box-card-shadow, 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.1)) ;
+    letter-spacing: 0px;
+    padding-top: 12px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    padding-bottom: 10.5px !important;
+    /* padding-bottom: 11px !important; */
+    position: absolute;
+    top: 10px;
+    border: 1px solid #454F54;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 100000;
+    color: white;
+    border-radius: 90px;
+    background: #303B42;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin-top: -2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: var(--Box-card-shadow, 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.1));
 }
   .txt1{
-    font-size: 14px !important;
-    font-family: "logicyclist10" !important;
+    font-size: 16px !important;
+    font-family: "logicyclist13" !important;
     font-weight: 400;
-    text-transform: uppercase;
     letter-spacing: 0px;
     margin-top: 15px;
     padding-left: 22px;
@@ -702,7 +724,7 @@ margin-top: -20px !important;
     background-image: linear-gradient(
         90deg,
         rgba(5, 240, 255, 0) 10%,
-        rgba(225, 198, 255, .2),
+        rgba(225, 198, 255, .1),
         rgba(5, 240, 255, 0) 100%
     );
     top: 0;
