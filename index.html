@@ -316,11 +316,11 @@ margin: 0px;
     
     /* Style pour la div avec les boutons */
 .sticky-top {
-      border-bottom: 1px solid #ffffff17;
+      border-bottom: 1px solid #3A4349;
   position: sticky;
   top: 0;
-  background-color: #2b1052;
-  padding: 10px;
+  background-color: #242E35;
+  padding: 7px;
   padding-left: 0px !important;
   padding-right: 0px !important;
   z-index: 2;
@@ -329,33 +329,7 @@ margin: 0px;
   position: relative;
 }
 
-/* Style pour les boutons scrollables (Button 1, Button 2, etc.) */
-.button-container a button {
-  display: inline-block;
-  margin-right: 17px;
-  padding: 10px 25px;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 100%) ;
-  color: white;
-  border: none !important;
-  border-radius: 90px;
-  cursor: pointer;
-  white-space: nowrap;
-      font-size: 17px !important;
-  text-transform: uppercase;
-    font-family: "logicyclist10" !important;
-    font-weight: 400;
-    letter-spacing: 0px;
-    line-height: 35px;
-      margin-top: 5px;
-    margin-bottom: 5px;
-}
 
-.button-container a button:hover {
-  background: color(display-p3 0 0.50588 0.94902);
-      box-shadow: 0 0 0px 4px #008eff38;
-    cursor: pointer;
-    transition-duration: 0s;
-}
 
 /* Style pour le bouton flottant "Voir" */
 .scroll-button {
@@ -772,6 +746,56 @@ margin-top: -20px !important;
 }
     
     
+    /* Style pour les boutons scrollables (Button 1, Button 2, etc.) */
+.button-container a button {
+  display: inline-block;
+  margin-right: 12px;
+  padding: 11px 16px;
+  color: white;
+  border: none !important;
+  border-radius: 90px;
+  cursor: pointer;
+  white-space: nowrap;
+      font-size: 14px !important;
+  text-transform: uppercase;
+    font-family: "logicyclist10" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 15px;
+      margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.button-container a button:hover {
+      box-shadow: 0 0 0px 4px #008eff38;
+    cursor: pointer;
+    transition-duration: 0s;
+}
+    
+    
+    
+.ib1 {
+background: color(display-p3 0 0.50588 0.94902);
+box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, .2), inset 0 -1px 2px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+    .ib2 {
+background: #674ead;
+box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, .2), inset 0 -1px 2px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+    .ib3 {
+background: #0e9b71;
+box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, .2), inset 0 -1px 2px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+    .ib4 {
+background: #9d257b;
+box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, .2), inset 0 -1px 2px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+    .ib5 {
+background: color(display-p3 0 0.50588 0.94902);
+box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, .2), inset 0 -1px 2px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+    
+    
   </style>
 </head>
 <body>
@@ -784,11 +808,11 @@ margin-top: -20px !important;
   <div class="button-container">
     
     <a class="txt1">All Perks and Services </a>
-    <a href="#"><button id="button1" data-title="PRIVATE STUDIO" data-text="A compact and pleasant accommodation, ideal for individuals or duos, offering optimised spaces with a private bathroom, toilet, and bedroom, as well as a large window overlooking a calm bamboo garden. The bed provides special comfort designed for athletes. Cleanliness and hygiene are a top priority. Some accommodations are equipped with a hypoxia training system." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Room-Logicyclist.svg?v=1722365027423" data-color="linear-gradient(70deg, #046778, #02798D)">PRIVATE STUDIO</button></a>
-    <a href="#"><button id="button2" data-title="MyTitle2" data-text="For accelerated recovery, relaxation, immune system strengthening, mental resilience, improved blood circulation, fat burning activation, and much more, make use of the hot and cold baths, also known as contrast baths. This space is designed to promote well-being and body therapy, with tailored advice available on-site for each use." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/HotCold.svg?v=1722196981084" data-color="linear-gradient(70deg, #703cac, #b37cf1)">HOT AND COLD POOLS</button></a>
-    <a href="#"><button id="button3" data-title="MyTitle3" data-text="Located in the heart of a region popular among cyclists, our area is naturally fantastic and rich in routes of all distances, elevations, and disciplines. Take a moment in your room to browse through our brochure featuring 101 local routes or join our social media networks." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">THE BEST ROUTES</button></a>
-       <a href="#"><button id="button4" data-title="MyTitle4" data-text="A clean bike is a fast bike. Use the bike wash area, equipped with all the necessary tools, equipment, and professional products for the most effective maintenance. Upon request, we take care of your bike’s upkeep every day, from the chain to the cockpit, and every small component in between." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BikeWashLogicyclist.svg?v=1725007897428" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">BIKE WASH</button></a> 
-        <a href="#"><button id="button5" data-title="MyTitle5" data-text="Massage therapy to improve muscle oxygenation. Our sports massage therapist will select invigorating and deep techniques according to your goals. The session typically lasts an hour and concludes with advice on stretching, muscle strengthening exercises, and nutrition. Book on demand or schedule regular treatments, it's up to you." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Massage-Logicyclist.svg?v=1721723216682" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">MASSAGES</button></a>
+    <a href="#"><button class="ib1" id="button1" data-title="PRIVATE STUDIO" data-text="A compact and pleasant accommodation, ideal for individuals or duos, offering optimised spaces with a private bathroom, toilet, and bedroom, as well as a large window overlooking a calm bamboo garden. The bed provides special comfort designed for athletes. Cleanliness and hygiene are a top priority. Some accommodations are equipped with a hypoxia training system." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Room-Logicyclist.svg?v=1722365027423" data-color="linear-gradient(70deg, #046778, #02798D)">PRIVATE STUDIO</button></a>
+    <a href="#"><button class="ib2" id="button2" data-title="MyTitle2" data-text="For accelerated recovery, relaxation, immune system strengthening, mental resilience, improved blood circulation, fat burning activation, and much more, make use of the hot and cold baths, also known as contrast baths. This space is designed to promote well-being and body therapy, with tailored advice available on-site for each use." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/HotCold.svg?v=1722196981084" data-color="linear-gradient(70deg, #703cac, #b37cf1)">HOT AND COLD POOLS</button></a>
+    <a href="#"><button class="ib3" id="button3" data-title="MyTitle3" data-text="Located in the heart of a region popular among cyclists, our area is naturally fantastic and rich in routes of all distances, elevations, and disciplines. Take a moment in your room to browse through our brochure featuring 101 local routes or join our social media networks." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">THE BEST ROUTES</button></a>
+       <a href="#"><button class="ib4" id="button4" data-title="MyTitle4" data-text="A clean bike is a fast bike. Use the bike wash area, equipped with all the necessary tools, equipment, and professional products for the most effective maintenance. Upon request, we take care of your bike’s upkeep every day, from the chain to the cockpit, and every small component in between." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BikeWashLogicyclist.svg?v=1725007897428" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">BIKE WASH</button></a> 
+        <a href="#"><button class="ib5" id="button5" data-title="MyTitle5" data-text="Massage therapy to improve muscle oxygenation. Our sports massage therapist will select invigorating and deep techniques according to your goals. The session typically lasts an hour and concludes with advice on stretching, muscle strengthening exercises, and nutrition. Book on demand or schedule regular treatments, it's up to you." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Massage-Logicyclist.svg?v=1721723216682" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">MASSAGES</button></a>
         <a href="#"><button id="button6" data-title="MyTitle6" data-text="This is not just a typical gym but a space for muscle strengthening. Working on all muscle chains to enhance strength, prevent injuries, and balance your power is essential for any athlete. You'll find a full range of necessary equipment, along with guide sheets for independent workouts, or you can choose a coach on demand for spontaneous or regular sessions." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Gym-Logicyclist.svg?v=1721723378669" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">GYM</button></a>
         <a href="#"><button id="button7" data-title="MyTitle7" data-text="We know how precious they are to you, and we understand! Here, you can choose individual or group boxes at the time of booking. These boxes are monitored 24/7, equipped with alarms, and securely locked according to the latest standards. As a neat feature, you can monitor your bike from anywhere via the link provided in your check-in email." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LocksLogicyclist.svg?v=1722670794125" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">BIKE LOCKERS</button></a>
         <a href="#"><button id="button8" data-title="MyTitle8" data-text="Because feeling good in your clothes also means better mindset, we want to give you all the tools for washing your garments. Access our self-service laundry room, open 24/7. Upon request, we also offer a laundry service where we collect your clothes and accessories daily and return them clean the next day." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LaundryLogicyclist.svg?v=1725007704496" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">LAUNDRY</button></a>
