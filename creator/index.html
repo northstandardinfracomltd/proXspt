@@ -10,7 +10,7 @@
       padding: 0;
     }
     body {
-      background-color: #f4f4f9;
+      background-color: #242E35;
       font-family: Arial, sans-serif;
     }
     
@@ -119,12 +119,15 @@ display: grid;
     }
 
     .dogdiv {
-      border: 1px solid #ccc;
       padding: 10px;
       padding-left: 40px;
       padding-right: 40px;
       text-align: center;
-      background: purple;
+      
+          border: 0px solid #3A4349;
+    border-radius: 11px;
+    background: #674ead;
+          box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, .2), inset 0 -1px 2px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .05);
     }
 
     .dogimage {
@@ -213,7 +216,84 @@ display: grid;
         }
     
     
+        
+          @font-face {
+        font-family: logicyclist1;
+        font-weight: bold;
+        src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20more?v=1692822723823")
+          format("opentype");
+      }
+      @font-face {
+        font-family: logicyclist2;
+        src: url(https://d1ayxb9ooonjts.cloudfront.net/fc3fa84bad39c1906ab5f12edfeeda77.otf);
+      }
+      @font-face {
+        font-family: logicyclist3;
+        src: url(https://d1ayxb9ooonjts.cloudfront.net/847b2e2eaaeffe475d49ab8586ed0938.otf);
+      }
+      @font-face {
+        font-family: logicyclist4;
+        src: url(https://d1ayxb9ooonjts.cloudfront.net/ff059c404b36c9ba4b07629da5c63673.otf);
+      }
+      @font-face {
+        font-family: logicyclist5;
+        src: url(https://d1ayxb9ooonjts.cloudfront.net/80cc6392abe5652b5227ecff51ad2526.otf);
+      }
+
+      @font-face {
+        font-family: logicyclist6;
+        src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Secondary?v=1692806478312")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: logicyclist8;
+        src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Button?v=1692822927520")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: logicyclist9;
+        src: url("https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistSans-Medium.woff2?v=1721675422669")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: logicyclist10;
+        src: url("https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistSans-ExtraBold.woff2?v=1721675423228")
+          format("opentype");
+      }
+
+      @font-face {
+        font-family: logicyclist11;
+        src: url("https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistSans-Book.woff2?v=1721675423938")
+          format("opentype");
+      }
+    
+    @font-face {
+font-family: logicyclist12;
+font-weight: bold;
+src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Secondary?v=1692806478312")
+format("opentype");
+}
+
+@font-face {
+font-family: logicyclist13;
+font-weight: bold;
+src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20more?v=1692822723823")
+format("opentype");
+}
+  
+@font-face {
+font-family: logicyclist14;
+font-weight: bold;
+src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Button?v=1692822927520")
+format("opentype");
+}
+    
+    
             .navbarDiv {
+                  border-bottom: 1px solid #3A4349;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -226,7 +306,13 @@ display: grid;
             transition: background 0.3s, box-shadow 0.3s;
         }
         .navbarLeft {
-            font-size: 1.5em;
+             font-size: 16px !important;
+    font-family: "logicyclist13" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin-top: 15px;
+    padding-left: 22px;
+    padding-right: 21px;
         }
         .navbarRight {
             display: flex;
@@ -234,13 +320,23 @@ display: grid;
             margin-left: auto;
         }
         .navbarButton {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+font-size: 16px !important;
+    font-family: "logicyclist13" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    padding-top: 12px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    padding-bottom: 10.5px !important;
+    top: 10px;
+    border: 1px solid #454F54;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 100000;
+    color: white;
+    border-radius: 10px;
+    background: #303B42;
+
         }
         .navbarButton:hover {
             background-color: #0056b3;
@@ -255,8 +351,8 @@ display: grid;
         }
         /* Classe pour le fond gris clair */
         .scrolled {
-            background: lightgrey;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+background: #242E35;
+    border-bottom: 1px solid #3A4349;
         }
     
     
