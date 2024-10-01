@@ -339,7 +339,11 @@ font-size: 16px !important;
 
         }
         .navbarButton:hover {
-            background-color: #0056b3;
+    border: 1px solid color(display-p3 0 0.51 0.95 / 0.74);
+    background-color: #303b428f;
+    box-shadow: 0 0 0px 4px #008eff38;
+    cursor: pointer;
+    transition-duration: 0s;
         }
         .navbarLink {
             text-decoration: none;
@@ -355,20 +359,83 @@ background: #242E35;
     border-bottom: 1px solid #3A4349;
         }
     
+    .imgay {
+background: #242E35;
+          max-width: 1000px;
+    width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 55px;
+      padding-bottom: 55px;
+        }
+    
+    
+    
+    
+    
+            .doggrid-containerf {
+display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .dogdivf {
+      padding: 10px;
+      padding-left: 40px;
+      padding-right: 40px;
+      text-align: center;
+      
+          border: 0px solid #3A4349;
+    border-radius: 11px;
+    background: #674ead;
+          box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, .2), inset 0 -1px 2px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .05);
+    }
+
+    .dogimagef {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .dogparagraphf {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .dogtagsf {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .dogtagf {
+      background-color: #007bff;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 12px;
+    }
     
   </style>
 </head>
 <body>
   
       <div class="navbarDiv" id="navbar">
-        <div class="navbarLeft">Business Solutions</div>
+        <div class="navbarLeft">Hotel and Resort Solutions</div>
         <div class="navbarRight">
 
             <a href="#process" class="navbarLink">Process</a>
             <a href="#modules" class="navbarLink">Modules</a>
             <a href="#faq" class="navbarLink">FAQ</a>
-            <a href="#contact" class="navbarLink">Contact</a>
-                      <button class="navbarButton">Call to Action</button>
+            <a href="#contact" class="navbarLink">En Français</a>
+                      <button class="navbarButton">Inquiry</button>
         </div>
     </div>
     <script>
@@ -385,50 +452,15 @@ background: #242E35;
   
   
   
-              <div class="content content1">
+              <div class="content content1 imgay">
         <h2>We create Custom specific and optimized Cycling Spaces</h2>
               <p>Enhance strength, prevent injuries, and balance your power is essential for any athlete. You'll find a full range of necessary equipment, along with guide sheets for independent workouts.</p>
              </div>
   
   
-  
-  <div class="unity">
-  <div class="container">
-    <div class="card visible-1" id="card-1"><p>1</p><br><p>On-site Visit : We create Custom specific and optimized Cycling Spaces</p></div>
-    <div class="card visible-2" id="card-2"><p>2</p><br><p>Architect Draw : We create Custom specific and optimized Cycling Spaces</p></div>
-    <div class="card visible-3" id="card-3"><p>3</p><br><p>On-site build : We create Custom specific and optimized Cycling Spaces</p></div>
-    <div class="card visible-4" id="card-4"><p>4</p><br><p>Test and Maintenance : We create Custom specific and optimized Cycling Spaces</p></div>
-  </div>
-    
-      <button class="next-button" onclick="showNextCard()">Next</button>
-    
-  </div>
 
-  <script>
-    let currentCard = 1; // Start from 1 to reflect the first card correctly
-    const totalCards = 4;
-
-    function showNextCard() {
-      // Update the current card index before updating classes
-      currentCard = (currentCard % totalCards) + 1;
-
-      // Update classes for visible cards
-      for (let i = 1; i <= totalCards; i++) {
-        const card = document.getElementById(`card-${i}`);
-        card.classList.remove(`visible-1`, `visible-2`, `visible-3`, `visible-4`);
-
-        let nextIndex = (i - currentCard + totalCards) % totalCards + 1;
-        card.classList.add(`visible-${nextIndex}`);
-      }
-    }
-  </script>
 
   
-  
-      <img
-      class="ENTRYCURVE"
-      src="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/batard2.svg?v=1726863168161"
-    />
   
   
   
@@ -493,28 +525,8 @@ background: #242E35;
       </div>
     </div>
 
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/ISO8.svg?v=1727770266884" class="dogimage" alt="Image 7">
-      <p class="dogparagraph">This is a dummy text for item 7.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
 
-    <div class="dogdiv">
-      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/ISO7.svg?v=1727770262386" class="dogimage" alt="Image 8">
-      <p class="dogparagraph">This is a dummy text for item 8.</p>
-      <div class="dogtags">
-        <span class="dogtag">Tag1</span>
-        <span class="dogtag">Tag2</span>
-        <span class="dogtag">Tag3</span>
-      </div>
-    </div>
   </div>
-  
-  
   
   
         <img
@@ -523,6 +535,68 @@ background: #242E35;
     />
   
   
+    <div class="doggrid-containerf">
+
+
+    <div class="dogdivf">
+      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/ISO8.svg?v=1727770266884" class="dogimagef" alt="Image 7">
+      <p class="dogparagraphf">This is a dummy text for item 7.</p>
+      <div class="dogtagsf">
+        <span class="dogtagf">Tag1</span>
+        <span class="dogtagf">Tag2</span>
+        <span class="dogtagf">Tag3</span>
+      </div>
+    </div>
+
+    <div class="dogdivf">
+      <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/ISO7.svg?v=1727770262386" class="dogimagef" alt="Image 8">
+      <p class="dogparagraphf">This is a dummy text for item 8.</p>
+      <div class="dogtagsf">
+        <span class="dogtagf">Tag1</span>
+        <span class="dogtagf">Tag2</span>
+        <span class="dogtagf">Tag3</span>
+      </div>
+    </div>
+  </div>
+  
+  
+        <img
+      class="ENTRYCURVE"
+      src="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/batard2.svg?v=1726863168161"
+    />
+  
+  
+    
+  <div class="unity">
+  <div class="container">
+    <div class="card visible-1" id="card-1"><p>1</p><br><p>On-site Visit : We create Custom specific and optimized Cycling Spaces</p></div>
+    <div class="card visible-2" id="card-2"><p>2</p><br><p>Architect Draw : We create Custom specific and optimized Cycling Spaces</p></div>
+    <div class="card visible-3" id="card-3"><p>3</p><br><p>On-site build : We create Custom specific and optimized Cycling Spaces</p></div>
+    <div class="card visible-4" id="card-4"><p>4</p><br><p>Test and Maintenance : We create Custom specific and optimized Cycling Spaces</p></div>
+  </div>
+    
+      <button class="next-button" onclick="showNextCard()">Next</button>
+    
+  </div>
+
+  <script>
+    let currentCard = 1; // Start from 1 to reflect the first card correctly
+    const totalCards = 4;
+
+    function showNextCard() {
+      // Update the current card index before updating classes
+      currentCard = (currentCard % totalCards) + 1;
+
+      // Update classes for visible cards
+      for (let i = 1; i <= totalCards; i++) {
+        const card = document.getElementById(`card-${i}`);
+        card.classList.remove(`visible-1`, `visible-2`, `visible-3`, `visible-4`);
+
+        let nextIndex = (i - currentCard + totalCards) % totalCards + 1;
+        card.classList.add(`visible-${nextIndex}`);
+      }
+    }
+  </script>
   
   
   <div class="zecontainer" id="slideContainer">
