@@ -527,6 +527,15 @@ display: grid;
          text-decoration: none;
     }
     
+    
+    .faqparent {
+     max-width: 900px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 110px;
+          padding-top: 110px;
+    }
   </style>
 </head>
 <body>
@@ -808,9 +817,10 @@ display: grid;
     showSlide(currentIndex);
 </script>
 
-  
+    <div class="faqparent">
 
     <p class="wrestler1">Questions You can Have</p>
+  
   
   <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
@@ -840,6 +850,8 @@ display: grid;
     <div class="faqcontent">Réponse à la question 4.</div>
 </div>
 
+      </div>
+  
 <script>
     function toggleFAQ(element) {
         const content = element.nextElementSibling;
