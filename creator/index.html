@@ -604,22 +604,60 @@ font-size: 26px !important;
   <div id="loading-bar" style="display: none;"></div>
 
 <style>
-  #loading-bar {
-    position: fixed; /* Utiliser fixed pour que ça ne déplace pas le contenu */
-    top: 0;
-    left: 0;
-    border-radius: 90px;
-    width: 0; /* Initialement à 0 pour l'animation */
-    height: 2.2px; /* Épaisseur de la barre */
-    background: linear-gradient(90deg, color(display-p3 0 0.50588 0.94902), #674ead);
-    z-index: 1000; /* Pour s'assurer qu'elle soit au-dessus de tout */
+@keyframes loadingAnimation {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  33% {
+    transform: translateX(0);
+  }
+  66% {
+    transform: translateX(100%);
+  }
+}
+
+#loading-bar {
+  position: fixed; /* Utiliser fixed pour que ça ne déplace pas le contenu */
+  top: 0;
+  left: 0;
+  border-radius: 90px;
+  width: 100%;
+  height: 2.2px; /* Épaisseur de la barre */
+  background: linear-gradient(90deg, color(display-p3 0 0.50588 0.94902), #674ead);
+  z-index: 1000; /* Pour s'assurer qu'elle soit au-dessus de tout */
+  animation: loadingAnimation 2s linear; /* Animation sur 1.4s */
+}
+</style>
+
+<script>
+  const loadingBar = document.getElementById('loading-bar');
+
+  function showLoadingBar() {
+    // Afficher la barre et initialiser à 0% de largeur
+    loadingBar.style.display = 'block';
+    loadingBar.style.width = '0%';
+
+    // Activer l'animation pour remplir la barre
+    loadingBar.style.transition = 'width 2s linear';
+    setTimeout(() => {
+      loadingBar.style.width = '100%'; // Remplir la barre en 2 secondes
+    }, 10); // Petit délai pour que la transition prenne effet
+
+    // Après 2 secondes, réinitialiser la barre
+    setTimeout(() => {
+      loadingBar.style.display = 'none'; // Masquer la barre
+      loadingBar.style.width = '0%'; // Réinitialiser la largeur
+    }, 2000); // Après 2 secondes
   }
 
-  @keyframes loadingAnimation {
-    from { width: 0%; }
-    to { width: 100%; }
-  }
-</style>
+  // Lancer la fonction toutes les 3 secondes
+  setInterval(showLoadingBar, 8000); // 
+
+  // Lancer une première fois
+  showLoadingBar();
+</script>
+
+
 
   
       <div class="navbarDiv" id="navbar">
@@ -926,7 +964,7 @@ font-size: 26px !important;
 
 <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
-        Question 3 <button class="faqbutton">Voir</button>
+        Branding and White label <button class="faqbutton">Voir</button>
     </div>
     <div class="faqcontent">Réponse à la question 3.</div>
 </div>
