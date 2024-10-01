@@ -398,7 +398,7 @@ display: grid;
         }
     
             .wrestler2 {
-        text-align: left;
+        text-align: center;
     font-size: 18px !important;
     font-family: "logicyclist13" !important;
     font-weight: 400;
@@ -576,13 +576,14 @@ font-size: 26px !important;
     
                 .wrestler3 {
         text-align: left;
-    font-size: 18px !important;
+    font-size: 100px !important;
     font-family: "logicyclist13" !important;
     font-weight: 400;
     letter-spacing: -0.2px;
     color: #fff !important;
     line-height: 35px;
     cursor: default;
+                  margin-top: 100px;
         }
     
                 .wrestler4 {
@@ -599,8 +600,30 @@ font-size: 26px !important;
 </head>
 <body>
   
+  
+  <div id="loading-bar" style="display: none;"></div>
+
+<style>
+  #loading-bar {
+    position: fixed; /* Utiliser fixed pour que ça ne déplace pas le contenu */
+    top: 0;
+    left: 0;
+    border-radius: 90px;
+    width: 0; /* Initialement à 0 pour l'animation */
+    height: 2.2px; /* Épaisseur de la barre */
+    background: linear-gradient(90deg, color(display-p3 0 0.50588 0.94902), #674ead);
+    z-index: 1000; /* Pour s'assurer qu'elle soit au-dessus de tout */
+  }
+
+  @keyframes loadingAnimation {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+</style>
+
+  
       <div class="navbarDiv" id="navbar">
-        <div class="navbarLeft"><a href="https://example.com" class="lelien">Logicylist.com</a> Hotel and Resort Solutions</div>
+        <div class="navbarLeft"><a href="https://example.com" class="lelien">Logicylist.com</a> Systems for Hotel and Resort</div>
         <div class="navbarRight">
 
             <a href="#process" class="navbarLink">Back to main website</a>
@@ -628,9 +651,7 @@ font-size: 26px !important;
   
   
               <div class="content content1 imgay">
-                 <p class="wrestler3">	❞</p>
-              <p class="wrestler2"><br><br>We create full custom spaces and distribute pre-built solutions for cycling-friendly facilities. Enhance strength, prevent injuries, and balance your power is essential for any athlete. You'll find a full range of necessary equipment, along with guide sheets for independent workouts.</p>
-                   <p class="wrestler4">Ronan, Solutions Architect</p>
+              <p class="wrestler2">Popular Pre-Built and Custom Solutions for Facilities</p>
   </div>
   
   
@@ -891,14 +912,14 @@ font-size: 26px !important;
   
   <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
-        Maintenance<button class="faqbutton">Voir</button>
+        About us<button class="faqbutton">Voir</button>
     </div>
-    <div class="faqcontent">Réponse à la question 1.</div>
+    <div class="faqcontent">We create full custom spaces and distribute pre-built solutions for cycling-friendly facilities.</div>
 </div>
 
 <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
-        Question 2 <button class="faqbutton">Voir</button>
+        Maintenance Option <button class="faqbutton">Voir</button>
     </div>
     <div class="faqcontent">Réponse à la question 2.</div>
 </div>
@@ -934,6 +955,11 @@ font-size: 26px !important;
     }
 </script>
   
+  
+  
+  
+  
+
   
   
 </body>
