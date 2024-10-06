@@ -550,7 +550,7 @@ select.urlang {
     padding-bottom: 10px !important;
     position: absolute;
     top: 10px;
-    border: 1px solid #454f54;
+    border: none;
     padding: 10px 15px;
     cursor: pointer;
     z-index: 100000;
@@ -559,7 +559,7 @@ select.urlang {
     background: #242E35;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    margin-top: 4.5px;
+    margin-top: 6px;
     margin-right: 5px;
     box-shadow: var(--Box-card-shadow, 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.1));
 }
@@ -573,29 +573,33 @@ select.urlang {
     padding-right: 21px;
     }
 #scroll-left {
-  left: 10px; /* Positionne à gauche */
+  left: 0px; /* Positionne à gauche */
+      margin-left: -1px;
+    border-radius: 0px 100px 100px 0px;
+    padding-right: 17px !important;
+    padding-left: 12px !important;
   box-shadow: -39px 1px 22px 65px #fff;
 -webkit-box-shadow: -39px 1px 22px 65px #fff;
 -moz-box-shadow: -39px 1px 22px 65px #fff;
 }
 
 #scroll-right {
-  right: 10px; /* Positionne à droite */
-box-shadow: 55px 1px 22px 65px #fff;
--webkit-box-shadow: 55px 1px 22px 65px #fff;
--moz-box-shadow: 55px 1px 22px 65px #fff;
+right: 0px;
+    box-shadow: 55px 1px 22px 65px #fff;
+    -webkit-box-shadow: 55px 1px 22px 65px #fff;
+    margin-right: -1px;
+    border-radius: 100px 0px 0px 100px;
+    padding-left: 17px !important;
+    padding-right: 12px !important;
+    -moz-box-shadow: 55px 1px 22px 65px #fff;
 }
     
     #scroll-right:hover {
-    border: 1px solid color(display-p3 0 0.51 0.95 / 0.74);
-    box-shadow: 0 0 0px 4px #008eff38;
     cursor: pointer;
     transition-duration: 0s;
     }
     
         #scroll-left:hover {
-    border: 1px solid color(display-p3 0 0.51 0.95 / 0.74);
-    box-shadow: 0 0 0px 4px #008eff38;
     cursor: pointer;
     transition-duration: 0s;
     }
@@ -1008,7 +1012,7 @@ body {
 
   
 <div class="sticky-top">
-    <button id="scroll-left" class="scienceX">Retour</button>
+    <button id="scroll-left" class="scienceX">Back</button>
   <div class="button-container">
     
     <a class="txt1">Favorites Topics </a>
@@ -1035,7 +1039,7 @@ body {
         <a href="#"><button class="ib2" id="button20" data-title="MyTitle3" data-text="The experience at our place often leads to great connections that might start over a coffee and continue up a mountain pass. Regardless of discipline, the cycling lifestyle or more generally the sporting philosophy is the soul of our establishment, whether you’re here to improve your performance, accomplish challenges, or simply for a sports-oriented trip." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/CommunityLogicyclist.svg?v=1725008032257" data-color="linear-gradient(20deg, #d64c81, #ff86b4)">All In App</button></a>
 
   </div>
-     <button id="scroll-right" class="science">Dérouler</button>  
+     <button id="scroll-right" class="science">Show More</button>  
 
   
 </div>
