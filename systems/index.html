@@ -275,12 +275,12 @@ format("opentype");
     
     
             .navbarDiv {
-                  border-bottom: 1px solid #3A4349;
+                  border-bottom: 0px solid transparent;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background: #fff;
+            background: transparent;
             position: sticky;
             top: 0;
             box-shadow: none;
@@ -321,13 +321,13 @@ text-decoration: underline;
         }
         /* Classe pour le fond gris clair */
         .scrolled {
-background: #242E35;
-    border-bottom: 1px solid #3A4349;
+background: transparent;
+    border-bottom: 0px solid #fff;
         }
     
     .imgay {
-background: #242E35;
-          max-width: 1000px;
+background: transparent;
+          max-width: 1050px;
     width: 100%;
       margin-left: auto;
       margin-right: auto;
@@ -535,20 +535,26 @@ display: grid;
     font-weight: 400;
     letter-spacing: 0px;
     padding-top: 12px !important;
-    padding-left: 16px !important;
-    padding-right: 12px !important;
-    padding-bottom: 10.5px !important;
+    padding-left: 19px !important;
+    padding-right: 8px !important;
+    padding-bottom: 11px !important;
     top: 10px;
-    border: 1px solid #454F54;
+    border: 1px solid #dcd4dcdb;
     padding: 10px 15px;
     cursor: pointer;
     z-index: 100000;
-    color: white;
-    border-radius: 10px;
-    background: #242E35;
+    color: #000;
+    border-radius: 100px;
+    background: #fff;
     display: flex;
+  margin-top: 20px;
     align-items: center;
     justify-content: space-between;
+  
+  
+      -webkit-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+    -moz-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+    box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
   
 }
 
@@ -602,38 +608,42 @@ font-size: 26px !important;
     line-height: 35px;
     cursor: default;
         }
+    
+    .fucked1 {
+     margin: 0px;
+    text-align: left;
+    font-size: 24px !important;
+    font-family: "logicyclist12" !important;
+    font-weight: 100;
+    letter-spacing: -0.5px;
+    line-height: 26px;
+    padding-bottom: 10px;
+    cursor: default;
+    padding-left: 0px;
+    padding-right: 5px;
+    color: black !important;
+    padding-top: 30px;
+        }
+    
+        .fucked2 {
+         text-align: left;
+    font-size: 17px !important;
+    font-family: "logicyclist13" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: #000 !important;
+    line-height: 32px;
+    cursor: default;
+    padding-left: 0px;
+    padding-right: 5px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+        }
   </style>
 </head>
 <body>
   
   
-  <div id="loading-bar" style="display: none;"></div>
-
-<style>
-@keyframes loadingAnimation {
-  0%, 100% {
-    transform: translateX(-100%);
-  }
-  33% {
-    transform: translateX(0);
-  }
-  66% {
-    transform: translateX(100%);
-  }
-}
-
-#loading-bar {
-  position: fixed; /* Utiliser fixed pour que ça ne déplace pas le contenu */
-  top: 0;
-  left: 0;
-  border-radius: 90px;
-  width: 100%;
-  height: 2.2px; /* Épaisseur de la barre */
-  background: linear-gradient(90deg, color(display-p3 0 0.50588 0.94902), #674ead);
-  z-index: 1000; /* Pour s'assurer qu'elle soit au-dessus de tout */
-  animation: loadingAnimation 2s linear; /* Animation sur 1.4s */
-}
-</style>
 
 <script>
   const loadingBar = document.getElementById('loading-bar');
@@ -667,10 +677,10 @@ font-size: 26px !important;
 
   
       <div class="navbarDiv" id="navbar">
-        <div class="navbarLeft"><a href="https://example.com" class="lelien">Logicylist.com</a> Systems for Hotel and Resort</div>
+        <div class="navbarLeft"><a href="https://example.com" class="lelien"></a></div>
         <div class="navbarRight">
 
-            <a href="/" class="navbarLink">Back to main website</a>
+            <a href="/" class="navbarLink"></a>
             <a href="votre-lien-ici" class="navbarButtonLink">
     <button class="navbarButton">
         New Project
@@ -695,7 +705,8 @@ font-size: 26px !important;
   
   
               <div class="content content1 imgay">
-              <p class="wrestler2">Popular Pre-Built and Custom Solutions for Facilities</p>
+<p class="fucked1">Popular Pre-Built and Custom Solutions for Facilities</p>
+<p class="fucked2">This is not just a typical gym but a space for muscle strengthening typical gym but a space for muscle strengthening typical.</p>
   </div>
   
   
