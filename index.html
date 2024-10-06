@@ -271,9 +271,9 @@ background-color: #242e3561;
     
         .content1 {
     margin-bottom: 42px !important;
-    background: #242E35;
-    border: 1px solid #3A4349;
-    border-radius: 11px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 0px 0px 11px 11px;
     padding: 20px !important;
     text-align: center !important;
     }
@@ -1002,9 +1002,10 @@ body {
     
           .magic {
     background: #ffffff1a;
-    border-radius: 11px;
+    border-radius: 11px 11px 0px 0px;
+            border-bottom: 0px solid transparent;
     border: 1px solid #ffffff1c;
-    margin-bottom: 15px;
+    margin-bottom: 0px; 
     text-align: center;
     padding: 15px;
 }
@@ -1186,10 +1187,14 @@ body {
 
       // Ajouter la classe 'blur-text' pour 2 secondes
       subtitleElement.classList.add('blur-text');
+      titleElement.classList.add('blur-text');
+
 
       setTimeout(() => {
         subtitleElement.classList.remove('blur-text');
-      }, 1400);
+                titleElement.classList.remove('blur-text');
+
+      }, 500);
 
       // Si l'image initiale est encore présente, on la masque
       if (!isInitialImageHidden) {
