@@ -1,91 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toggle Button</title>
-    <style>
-        /* Styles de base */
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* Styles du conteneur */
-        .togglecontainer {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        /* Styles des boutons toggle */
-        .togglebutton {
-            padding: 10px 20px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            background-color: #f0f0f0;
-            margin-right: 10px;
-            transition: background-color 0.3s;
-        }
-
-        /* Bouton actif */
-        .togglebutton.active {
-            background-color: #4caf50;
-            color: white;
-        }
-
-        /* Contenu de div caché */
-        .togglediv {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
-        }
-
-        /* Div visible */
-        .togglediv.show {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Availability and Cost</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+  
+  
+  <style>
+  body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  margin: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.info {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+  
 <body>
+  <div class="container">
+    <label for="country-select">Verify Availability and Cost:</label>
+    <select id="country-select">
+      <option value="" disabled selected>Select a country</option>
+      <option value="France" data-status="Available from" data-cost="5">France</option>
+      <option value="Espagne" data-status="Available from" data-cost="5">Espagne</option>
+      <option value="Allemagne" data-status="Available from" data-cost="5">Allemagne</option>
+      <option value="Royaume-Uni" data-status="Available from" data-cost="5">Royaume-Uni</option>
+      <option value="Portugal" data-status="Available from" data-cost="5">Portugal</option>
+    </select>
 
-<div class="togglecontainer">
-    <button class="togglebutton active" id="option1">Option1</button>
-    <button class="togglebutton" id="option2">Option2</button>
-</div>
+    <div id="availability-info" class="info hidden">
+      <!-- The result will be displayed here -->
+    </div>
+  </div>
 
-<!-- Divs contenant le contenu -->
-<div class="togglediv toggledivone show">
-    <p>Contenu pour Option 1. Voici du texte dummy qui est affiché par défaut lors du chargement de la page.</p>
-</div>
+  <script>
+    // Function to add 60 days to the current date
+    function getFutureDate() {
+      const today = new Date();
+      today.setDate(today.getDate() + 60);
+      const day = String(today.getDate()).padStart(2, '0');
+      const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+      return `${day}/${month}`;
+    }
 
-<div class="togglediv toggledivtwo">
-    <p>Contenu pour Option 2. Voici un autre texte dummy qui sera affiché lorsque vous cliquez sur le bouton "Option2".</p>
-</div>
-
-<script>
-    // Sélection des boutons et des divs
-    const button1 = document.getElementById('option1');
-    const button2 = document.getElementById('option2');
-    const divOne = document.querySelector('.toggledivone');
-    const divTwo = document.querySelector('.toggledivtwo');
-
-    // Fonction pour activer Option1
-    button1.addEventListener('click', () => {
-        button1.classList.add('active');
-        button2.classList.remove('active');
-        divOne.classList.add('show');
-        divTwo.classList.remove('show');
+    // Handle the select change
+    document.getElementById('country-select').addEventListener('change', function() {
+      const selectedOption = this.options[this.selectedIndex];
+      const country = selectedOption.value;
+      const status = selectedOption.getAttribute('data-status');
+      const cost = selectedOption.getAttribute('data-cost');
+      const futureDate = getFutureDate();
+      
+      // Update the availability info
+      const infoDiv = document.getElementById('availability-info');
+      infoDiv.textContent = `${status} ${country} by ${futureDate} from £${cost}k tax excl.`;
+      infoDiv.classList.remove('hidden');
     });
-
-    // Fonction pour activer Option2
-    button2.addEventListener('click', () => {
-        button2.classList.add('active');
-        button1.classList.remove('active');
-        divTwo.classList.add('show');
-        divOne.classList.remove('show');
-    });
-</script>
-
+  </script>
 </body>
 </html>
