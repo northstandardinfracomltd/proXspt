@@ -246,10 +246,14 @@ format("opentype");
 
     /* Right Column */
     .right-column {
-background-color: #52525247;
       width: 40%;
       overflow-y: auto;
       padding: 55px;
+          height: 100%;
+    background-color: #52525247;
+    background-image: radial-gradient(circle, #D0D0D0 1px, transparent 1px);
+    background-size: 25px 25px;
+}
     }
     
         .subby {
@@ -1077,6 +1081,37 @@ font-size: 26px !important;
         .navbarButtonLink {
     text-decoration: none;
 }
+    
+    
+        .containeravailability {
+      margin: 20px;
+           display: none;
+    }
+
+    .labelavailability {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .selectavailability {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .infoavailability {
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      font-size: 18px;
+    }
+
+    .hiddenavailability {
+      display: none;
+    }
+    
+
   </style>
 </head>
 <body>
@@ -1159,23 +1194,54 @@ font-size: 26px !important;
  <div class="magic">
           <h1 id="left-title" class="titleX">Easy Custom Spaces</h1>
           <h2 id="left-subtitle" class="textX">This is not just a typical gym but a space for muscle strengthening typical gym but a space for muscle strengthening typical.</h2>
-   </div>
-      <div class="content accent content1">
+  
+        <div class="containeravailability">
+    <label for="country-select" class="labelavailability">Verify Availability and Cost:</label>
+    <select id="country-select" class="selectavailability">
+      <option value="" disabled selected>Select a country</option>
+      <option value="France" data-status="Available from" data-cost="5">France</option>
+      <option value="Espagne" data-status="Available from" data-cost="5">Espagne</option>
+      <option value="Allemagne" data-status="Available from" data-cost="5">Allemagne</option>
+      <option value="Royaume-Uni" data-status="Available from" data-cost="5">Royaume-Uni</option>
+      <option value="Portugal" data-status="Available from" data-cost="5">Portugal</option>
+    </select>
 
-                  <h1 class="physio">Go Beyond</h1>
+    <div id="availability-info" class="infoavailability hiddenavailability">
+      <!-- The result will be displayed here -->
+    </div>
+  </div>
 
-        <h2>To configure your new experience or add credit to your customer card for on-site products and services.</h2>
-<div class="button-containerW">
-    <a href="/systems">
-        <button class="my-buttonW fiji">Custom Solutions</button>
-    </a>
-    <a onclick="openPopup()">
-        <button class="my-buttonW fiji">Contact us</button>
-    </a>
-</div>
+  <script>
+    // Function to add 60 days to the current date
+    function getFutureDate() {
+      const today = new Date();
+      today.setDate(today.getDate() + 60);
+      const day = String(today.getDate()).padStart(2, '0');
+      const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+      return `${day}/${month}`;
+    }
 
-        
-     </div>
+    // Handle the select change
+    document.getElementById('country-select').addEventListener('change', function() {
+      const selectedOption = this.options[this.selectedIndex];
+      const country = selectedOption.value;
+      const status = selectedOption.getAttribute('data-status');
+      const cost = selectedOption.getAttribute('data-cost');
+      const futureDate = getFutureDate();
+      
+      // Update the availability info
+      const infoDiv = document.getElementById('availability-info');
+      infoDiv.textContent = `${status} ${country} by ${futureDate} from £${cost}k tax excl.`;
+      infoDiv.classList.remove('hiddenavailability');
+    });
+  </script>
+      
+      
+      
+      
+      
+      </div>
+
 
 <script>
     // Sélection des boutons et des divs
@@ -1249,7 +1315,6 @@ font-size: 26px !important;
 <div class="sticky-footer">
 
 </div>
-
 <script>
   let isInitialImageHidden = false; // Variable pour suivre si l'image initiale est masquée
 
@@ -1271,11 +1336,9 @@ font-size: 26px !important;
       subtitleElement.classList.add('blur-text');
       titleElement.classList.add('blur-text');
 
-
       setTimeout(() => {
         subtitleElement.classList.remove('blur-text');
-                titleElement.classList.remove('blur-text');
-
+        titleElement.classList.remove('blur-text');
       }, 200);
 
       // Si l'image initiale est encore présente, on la masque
@@ -1302,10 +1365,12 @@ font-size: 26px !important;
           loadingBar.style.display = 'none'; // Masquer la barre
         }, 0); // Temps pour la réinitialisation
       }, 2000); // Temps d'affichage
+
+      // Afficher la div .containeravailability après le clic
+      document.querySelector('.containeravailability').style.display = 'block';
     });
   });
 </script>
-
   
   
   
