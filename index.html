@@ -595,20 +595,20 @@ right: 0px;
     }
     
    .titleX {
-margin: 0px;
+    margin: 0px;
     text-align: center;
     font-size: 17px !important;
     font-family: "logicyclist13" !important;
     font-weight: 100;
-    letter-spacing: -0.5px;
+    letter-spacing: 0px;
     line-height: 26px;
-    padding-bottom: 7px;
+    padding-bottom: 12px;
     cursor: default;
     /* text-transform: uppercase; */
     padding-left: 10px;
     padding-right: 15px;
     color: #ffffffd9 !important;
-    padding-top: 5px;
+    padding-top: 8px;
 }
     
     
@@ -1216,6 +1216,19 @@ font-size: 26px !important;
             background-color: #0056b3;
         }
     
+    .selectavailability {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none; /* Supprime l'icône du dropdown */
+}
+
+/* Supprime le contour bleu lors du focus */
+.selectavailability:focus {
+  outline: none;
+  box-shadow: none;
+}
+    
     
   </style>
 </head>
@@ -1230,7 +1243,7 @@ font-size: 26px !important;
     
     <a class="txt1">Expertises et Solutions</a>
     
-<a href="#"><button class="ib2" id="button22" data-mine="From £5k" data-title="Easy Outdoor Pod Container" data-text="We know how precious they are to you, and we understand! Here, you can choose individual or group boxes at the time of booking. These boxes are monitored 24/7, equipped with alarms, and securely locked according to the latest standards. As a neat feature, you can monitor your bike from anywhere via the link provided in your check-in email." data-image="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/ISO5.svg?v=1727770254874" data-color="linear-gradient(180deg, color(display-p3 0.2 0.47 0.54), #674ead)">Pod Extérieur</button></a>
+<a href="#"><button class="ib2" id="button22" data-mine="Tarif : à partir de £5k + TVA (20%)" data-title="Container Spécialisé Extérieur" data-text="We know how precious they are to you, and we understand! Here, you can choose individual or group boxes at the time of booking. These boxes are monitored 24/7, equipped with alarms, and securely locked according to the latest standards. As a neat feature, you can monitor your bike from anywhere via the link provided in your check-in email." data-image="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/ISO5.svg?v=1727770254874" data-color="linear-gradient(180deg, color(display-p3 0.2 0.47 0.54), #674ead)">Pod Extérieur</button></a>
 <a href="#"><button class="ib2" id="button1" data-title="HIPOXIA" data-text="A compact and pleasant accommodation, ideal for individuals or duos, offering optimised spaces with a private bathroom, toilet, and bedroom, as well as a large window overlooking a calm bamboo garden. The bed provides special comfort designed for athletes. Cleanliness and hygiene are a top priority. Some accommodations are equipped with a hypoxia training system." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Room-Logicyclist.svg?v=1722365027423" data-color="linear-gradient(180deg, color(display-p3 0.2 0.47 0.54), #674ead)">Système Hipoxie</button></a>
 <a href="#"><button class="ib2" id="button2" data-title="MyTitle2" data-text="For accelerated recovery, relaxation, immune system strengthening, mental resilience, improved blood circulation, fat burning activation, and much more, make use of the hot and cold baths, also known as contrast baths. This space is designed to promote well-being and body therapy, with tailored advice available on-site for each use." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/HotCold.svg?v=1722196981084" data-color="linear-gradient(180deg, color(display-p3 0.2 0.47 0.54), #674ead)">Bains Récupération</button></a>
 <a href="#"><button class="ib2" id="button7" data-title="Mesh Bike Lockers" data-text="We know how precious they are to you, and we understand! Here, you can choose individual or group boxes at the time of booking. These boxes are monitored 24/7, equipped with alarms, and securely locked according to the latest standards. As a neat feature, you can monitor your bike from anywhere via the link provided in your check-in email." data-image="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/ISO3.svg?v=1727770249880" data-color="linear-gradient(180deg, color(display-p3 0.2 0.47 0.54), #674ead)">Casiers Vélos Standard</button></a>
@@ -1298,14 +1311,12 @@ font-size: 26px !important;
    
     <div class="insidemagic">
           <h2 id="left-subtitle" class="textX">This is not just a typical gym but a space for muscle strengthening typical gym but a space for muscle strengthening typical.</h2>
-<p id="mine" class="minetxt"></p>
       
-      
+      <p id="mine" class="minetxt"></p>
       
         <div class="containeravailability">
-    <label for="country-select" class="labelavailability">Verify Availability and Fees:</label>
     <select id="country-select" class="selectavailability">
-      <option value="" disabled selected>Select a country</option>
+      <option value="" disabled selected>Verify Availability and Fees</option>
       <option value="France" data-status="Available from" data-cost="5">France</option>
       <option value="Espagne" data-status="Available from" data-cost="5">Espagne</option>
       <option value="Allemagne" data-status="Available from" data-cost="5">Allemagne</option>
@@ -1345,8 +1356,8 @@ font-size: 26px !important;
       
       
       
-          <a href="https://example.com">
-    <button class="lalala">Set a Call Back</button>
+          <a onclick="openPopup()" >
+    <button class="lalala">Être rappelé</button>
     </a>
       
       </div>      </div>
