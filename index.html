@@ -1141,16 +1141,23 @@ font-size: 26px !important;
     }
 
     .selectavailability {
-      width: 100%;
-      
-      font-size: 16px !important;
+-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: none;
+}
+.selectavailability {
+    width: 185px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px !important;
     font-family: "logicyclist13" !important;
     font-weight: 400;
     letter-spacing: 0px;
-    padding-top: 12px !important;
-    padding-left: 19px !important;
+    padding-top: 16px !important;
+    padding-left: 8px !important;
     padding-right: 8px !important;
-    padding-bottom: 11px !important;
+    padding-bottom: 14px !important;
     top: 10px;
     border: 1px solid #fff;
     padding: 10px 15px;
@@ -1160,8 +1167,9 @@ font-size: 26px !important;
     border-radius: 100px;
     background: #fff;
     display: flex;
-    margin-top: 12px;
+    margin-top: 0px;
     align-items: center;
+    text-align: center;
     justify-content: space-between;
     -webkit-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
     -moz-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
@@ -1169,10 +1177,18 @@ font-size: 26px !important;
     }
 
     .infoavailability {
-      padding: 10px;
-      border: 1px solid #ccc;
-      background-color: #f9f9f9;
-      font-size: 18px;
+padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #ffffff14;
+    background-color: #ffffff1a;
+      
+          font-size: 17px !important;
+    font-family: "logicyclist13" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: #ffffff !important;
+    line-height: 32px;
     }
 
     .hiddenavailability {
@@ -1355,11 +1371,11 @@ font-size: 26px !important;
             <p class="minetxt">Vérifier la disponibilité locale:</p>
     <select id="country-select" class="selectavailability">
       <option value="" disabled selected>Choisir un pays</option>
-      <option value="France" data-status="Peut-être installé en" data-cost="5">France</option>
-      <option value="Espagne" data-status="Peut-être installé en" data-cost="5">Espagne</option>
-      <option value="Allemagne" data-status="Peut-être installé en" data-cost="5">Allemagne</option>
-      <option value="Royaume-Uni" data-status="Peut-être installé en" data-cost="5">Royaume-Uni</option>
-      <option value="Portugal" data-status="Peut-être installé en" data-cost="5">Portugal</option>
+      <option value="en France" data-status="Peut-être installé " data-cost="5">France</option>
+      <option value="en Espagne" data-status="Peut-être installé " data-cost="5">Espagne</option>
+      <option value="en Allemagne" data-status="Peut-être installé " data-cost="5">Allemagne</option>
+      <option value="au Royaume-Uni" data-status="Peut-être installé " data-cost="5">Royaume-Uni</option>
+      <option value="au Portugal" data-status="Peut-être installé " data-cost="5">Portugal</option>
     </select>
 
     <div id="availability-info" class="infoavailability hiddenavailability">
