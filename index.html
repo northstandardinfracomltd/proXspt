@@ -1409,47 +1409,7 @@ border-bottom: 0px solid transparent !important;
       
       <p id="mine" class="minetxt"></p>
       
-        <div class="containeravailability">
-          
-            <p class="minetxt">Vérifier la disponibilité locale:</p>
-    <select id="country-select" class="selectavailability">
-      <option value="" disabled selected>Choisir un pays</option>
-      <option value="en France" data-status="Peut-être installé " data-cost="5">France</option>
-      <option value="en Espagne" data-status="Peut-être installé " data-cost="5">Espagne</option>
-      <option value="en Allemagne" data-status="Peut-être installé " data-cost="5">Allemagne</option>
-      <option value="au Royaume-Uni" data-status="Peut-être installé " data-cost="5">Royaume-Uni</option>
-      <option value="au Portugal" data-status="Peut-être installé " data-cost="5">Portugal</option>
-    </select>
-
-    <div id="availability-info" class="infoavailability hiddenavailability">
-      <!-- The result will be displayed here -->
-    </div>
-  </div>
-
-  <script>
-    // Function to add 60 days to the current date
-    function getFutureDate() {
-      const today = new Date();
-      today.setDate(today.getDate() + 60);
-      const day = String(today.getDate()).padStart(2, '0');
-      const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-      return `${day}/${month}`;
-    }
-
-    // Handle the select change
-    document.getElementById('country-select').addEventListener('change', function() {
-      const selectedOption = this.options[this.selectedIndex];
-      const country = selectedOption.value;
-      const status = selectedOption.getAttribute('data-status');
-      const cost = selectedOption.getAttribute('data-cost');
-      const futureDate = getFutureDate();
-      
-      // Update the availability info
-      const infoDiv = document.getElementById('availability-info');
-      infoDiv.textContent = `${status} ${country} à partir du ${futureDate}. Frais d'étude technique personnalisée de £${cost}k (hors taxes). Des frais logistiques complémentaires peuvent s'appliquer.`;
-      infoDiv.classList.remove('hiddenavailability');
-    });
-  </script>
+  
       
       
       
@@ -1494,6 +1454,61 @@ border-bottom: 0px solid transparent !important;
     </div>
     <div class="faqcontent">Réponse à la question 2.</div>
 </div>
+      
+      
+      
+      
+            <div class="faqdiv">
+    <div class="faqtitle" onclick="toggleFAQ(this)">
+        Dispo<button class="faqbutton">Voir</button>
+    </div>
+    <div class="faqcontent">      <div class="containeravailability">
+          
+            <p class="minetxt">Vérifier la disponibilité locale:</p>
+    <select id="country-select" class="selectavailability">
+      <option value="" disabled selected>Choisir un pays</option>
+      <option value="en France" data-status="Peut-être installé " data-cost="5">France</option>
+      <option value="en Espagne" data-status="Peut-être installé " data-cost="5">Espagne</option>
+      <option value="en Allemagne" data-status="Peut-être installé " data-cost="5">Allemagne</option>
+      <option value="au Royaume-Uni" data-status="Peut-être installé " data-cost="5">Royaume-Uni</option>
+      <option value="au Portugal" data-status="Peut-être installé " data-cost="5">Portugal</option>
+    </select>
+
+    <div id="availability-info" class="infoavailability hiddenavailability">
+      <!-- The result will be displayed here -->
+    </div>
+  </div>
+
+  <script>
+    // Function to add 60 days to the current date
+    function getFutureDate() {
+      const today = new Date();
+      today.setDate(today.getDate() + 60);
+      const day = String(today.getDate()).padStart(2, '0');
+      const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+      return `${day}/${month}`;
+    }
+
+    // Handle the select change
+    document.getElementById('country-select').addEventListener('change', function() {
+      const selectedOption = this.options[this.selectedIndex];
+      const country = selectedOption.value;
+      const status = selectedOption.getAttribute('data-status');
+      const cost = selectedOption.getAttribute('data-cost');
+      const futureDate = getFutureDate();
+      
+      // Update the availability info
+      const infoDiv = document.getElementById('availability-info');
+      infoDiv.textContent = `${status} ${country} à partir du ${futureDate}. Frais d'étude technique personnalisée de £${cost}k (hors taxes). Des frais logistiques complémentaires peuvent s'appliquer. Des modificatons spécifiques a la conformité locale peuvent devenir nécessaires.`;
+      infoDiv.classList.remove('hiddenavailability');
+    });
+  </script>
+              
+              </div>
+</div>
+      
+      
+      
 
 <div class="faqdiv ender">
     <div class="faqtitle" onclick="toggleFAQ(this)">
