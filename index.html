@@ -1226,10 +1226,11 @@ padding: 10px;
     
        .faqparent {
          display: none; 
-         
-         -webkit-box-shadow: 0px 0px 30px 0px rgb(24 94 109);
-    -moz-box-shadow: 0px 0px 30px 0px rgb(24 94 109);
-    box-shadow: 0px 0px 30px 0px rgb(24 94 109);
+         padding-top: 2px !important;
+                  padding-bottom: 2px !important;
+         -webkit-box-shadow: 0px 0px 30px 0px rgb(84 84 84 / 52%);
+    -moz-box-shadow: 0px 0px 30px 0px rgb(84 84 84 / 52%);
+    box-shadow: 0px 0px 30px 0px rgb(84 84 84 / 52%);
     padding: 0px;
     text-align: center;
     border: 0px solid #3A4349;
@@ -1261,8 +1262,8 @@ padding: 10px;
           
           
           padding-top: 12px !important;
-    padding-left: 19px !important;
-    padding-right: 8px !important;
+    padding-left: 18px !important;
+    padding-right: 11px !important;
     padding-bottom: 11px !important;
     top: 10px;
     border: 1px solid #fff;
@@ -1326,6 +1327,15 @@ padding: 10px;
     
     .ender {
 border-bottom: 0px solid transparent !important;
+      margin-bottom: -2px !important;
+}
+    
+    select option {
+    text-align: center; /* Aligner le texte des options au centre */
+}
+    
+    select {
+    text-align: center; /* Aligner le texte au centre */
 }
     
   </style>
@@ -1431,28 +1441,28 @@ border-bottom: 0px solid transparent !important;
   
   <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
-        Découvrir ProximaSport<button class="faqbutton">En savoir plus</button>
+        Découvrir ProximaSport<button class="faqbutton">Informations</button>
     </div>
     <div class="faqcontent">We create full custom spaces and distribute pre-built solutions for cycling-friendly facilities.</div>
 </div>
 
 <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
-        Service Maintenance<button class="faqbutton">En savoir plus</button>
+        Service Maintenance<button class="faqbutton">Informations</button>
     </div>
     <div class="faqcontent">Réponse à la question 2.</div>
 </div>
 
 <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
-       Service Animation<button class="faqbutton">En savoir plus</button>
+       Service Animation<button class="faqbutton">Informations</button>
     </div>
     <div class="faqcontent">Réponse à la question 3.</div>
 </div>
       
       <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
-        Processus<button class="faqbutton">En savoir plus</button>
+        Processus<button class="faqbutton">Informations</button>
     </div>
     <div class="faqcontent">Réponse à la question 2.</div>
 </div>
@@ -1462,7 +1472,7 @@ border-bottom: 0px solid transparent !important;
       
             <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
-        Disponibilité Locale<button class="faqbutton">En savoir plus</button>
+        Disponibilité Locale<button class="faqbutton">Informations</button>
     </div>
     <div class="faqcontent">            <div class="containeravailability">
           
@@ -1514,7 +1524,7 @@ border-bottom: 0px solid transparent !important;
 
 <div class="faqdiv ender">
     <div class="faqtitle" onclick="toggleFAQ(this)">
-        Personnalisation<button class="faqbutton">En savoir plus</button>
+        Personnalisation<button class="faqbutton">Informations</button>
     </div>
     <div class="faqcontent faqcontentender">Réponse à la question 4.</div>
 </div>
@@ -1532,7 +1542,7 @@ border-bottom: 0px solid transparent !important;
             if (item !== content) {
                 item.style.display = 'none';
                 const otherButton = item.previousElementSibling.querySelector('button');
-                if (otherButton) otherButton.textContent = 'En savoir plus'; // Remettre les autres boutons à "Voir"
+                if (otherButton) otherButton.textContent = 'Informations'; // Remettre les autres boutons à "Voir"
             }
         });
 
@@ -1540,7 +1550,7 @@ border-bottom: 0px solid transparent !important;
         content.style.display = content.style.display === 'block' ? 'none' : 'block';
 
         // Changer le texte du bouton
-        button.textContent = content.style.display === 'block' ? 'Masquer' : 'En savoir plus';
+        button.textContent = content.style.display === 'block' ? 'Fermer' : 'Informations';
     }
 </script>
     
