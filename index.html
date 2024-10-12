@@ -965,6 +965,11 @@ padding-top: 14px;
       text-decoration: none;
         }
     
+        .liberatorlinker:hover {
+
+      text-decoration: underline;
+        }
+    
     
     
     @media (max-width: 767px) {
@@ -1347,6 +1352,7 @@ border-bottom: 0px solid transparent !important;
     
     
         .contactdiv {
+          display: none;
     background: transparent;
     border-radius: 0px;
           border: none;
@@ -1677,8 +1683,8 @@ border-bottom: 0px solid transparent !important;
       <div class="content legalblock">
 
       
-            <p class="footext">©ProximaSport France 2024<br>
-<a href="#privacy" class="liberatorlinker">Confidentialité</a> et <a href="#terms" class="liberatorlinker">Conditions</a><br>ProximaSport <a href="#terms" class="liberatorlinker">English (UK)</a> — <a href="#terms" class="liberatorlinker">Español (ES)</a>
+            <p class="footext">
+<a href="#privacy" class="liberatorlinker">Confidentialité</a> et <a href="#terms" class="liberatorlinker">Conditions</a><br>ProximaSport© 2024 — Synergius LTD 13344127 — Page en Français<br>Autres langues: <a href="#terms" class="liberatorlinker">English (UK)</a> — <a href="#terms" class="liberatorlinker">Español (ES)</a>
       </p>
         
             </div>
@@ -1775,6 +1781,8 @@ border-bottom: 0px solid transparent !important;
 
       // Afficher la div .faqparent après le clic
       document.querySelector('.faqparent').style.display = 'block';
+            document.querySelector('.contactdiv').style.display = 'block';
+
     });
     
     
