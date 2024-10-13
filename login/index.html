@@ -30,11 +30,10 @@
                     .contentX {
                 text-align: center;
 width: 97%;
-                      max-width: 500px;
+                      max-width: 400px;
                       margin-left: auto;
                       margin-right: auto;
                       margin-top: 200px;
-                          margin-bottom: 200px;
         }
       
       
@@ -92,7 +91,11 @@ width: 97%;
         <input type="password" id="password" placeholder="Mot de passe" oninput="checkPassword()">
         <button id="loginBtn" onclick="showError()">Login</button>
         <div class="error" id="errorMessage">Compte inexistant</div>
-    </div> </div>
+    </div> </div>       
+       
+       <a href="/login" class="call-buttonX">
+            Retour à l'accueil
+        </a>
 
     <script>
         function checkInput() {
