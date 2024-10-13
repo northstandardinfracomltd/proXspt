@@ -28,18 +28,26 @@
         }
       
                     .contentX {
-                
+                text-align: center;
 width: 97%;
-                      max-width: 
+                      max-width: 500px;
+                      margin-left: auto;
+                      margin-right: auto;
+                      margin-top: 200px;
+                          margin-bottom: 200px;
         }
       
       
       
       
         .login-container {
-    background-color : linear-gradient(color(display-p3 0.2 0.47 0.54), rgb(103, 78, 173));
+    background-color : #fff;
             padding: 20px;
-            border-radius: 10px;
+          -webkit-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+    -moz-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+    box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+            border-radius: 12px;
+          border: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
@@ -52,7 +60,6 @@ width: 97%;
             border-radius: 5px;
         }
         button {
-            display: none; /* Masqué par défaut */
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -66,8 +73,9 @@ width: 97%;
             display: none; /* Masqué par défaut */
         }
         img {
-            width: 100px; /* Ajustez la taille du logo ici */
-            margin-bottom: 20px;
+    width: 97%;
+    max-width: 300px;
+    margin-bottom: 30px;
         }
     </style>
 </head>
@@ -90,15 +98,8 @@ width: 97%;
         function checkInput() {
             const username = document.getElementById('username').value;
             const passwordField = document.getElementById('password');
-            const errorMessage = document.getElementById('errorMessage');
 
-            // Afficher le champ mot de passe si l'identifiant a au moins 3 caractères
-            if (username.length >= 3) {
-                passwordField.style.display = 'block';
-            } else {
-                passwordField.style.display = 'none';
-                errorMessage.style.display = 'none'; // Cacher le message d'erreur
-            }
+
         }
 
         function checkPassword() {
@@ -106,13 +107,7 @@ width: 97%;
             const loginBtn = document.getElementById('loginBtn');
             const errorMessage = document.getElementById('errorMessage');
 
-            // Afficher le bouton Login si le mot de passe a au moins 3 caractères
-            if (password.length >= 3) {
-                loginBtn.style.display = 'block';
-            } else {
-                loginBtn.style.display = 'none';
-                errorMessage.style.display = 'none'; // Cacher le message d'erreur
-            }
+
         }
 
         function showError() {
@@ -127,6 +122,9 @@ width: 97%;
             }
         }
     </script>
+       
+       
+       
           </div>
 </body>
 </html>
