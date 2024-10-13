@@ -1172,28 +1172,29 @@ font-size: 26px !important;
     padding-right: 8px !important;
     padding-bottom: 14px !important;
     top: 10px;
-    border: 1px solid #fff;
+    border: 1px solid color(display-p3 0.2 0.47 0.54);
     padding: 10px 15px;
     cursor: pointer;
     z-index: 100000;
-    color: #000;
+    color: #fff;
     border-radius: 100px;
-    background: #fff;
+    background: color(display-p3 0.2 0.47 0.54);
     display: flex;
     margin-top: 0px;
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    -webkit-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
-    -moz-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
-    box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+    }
+    
+    .selectavailability:hover {
+    box-shadow: 0 0 0px 4px #1a9fb263;
     }
 
     .infoavailability {
 padding: 10px;
     margin-top: 10px;
-    border-radius: 10px;
-    border: 1px solid #ffffff14;
+    border-radius: 0px;
+    border: none;
     background-color: #ffffff1a;
       
           font-size: 17px !important;
@@ -1202,6 +1203,20 @@ padding: 10px;
     letter-spacing: 0px;
     color: #ffffff !important;
     line-height: 32px;
+      
+      
+          text-align: center;
+    font-size: 17px !important;
+    font-family: "logicyclist13" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: color(display-p3 0.2 0.47 0.54) !important;
+    line-height: 32px;
+    cursor: default;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 26px;
     }
 
     .hiddenavailability {
@@ -1292,8 +1307,8 @@ padding: 10px;
         }
         .faqcontent {
     display: none;
-    color: #674ead;
-    background-color: #e5e3f1;
+    color: color(display-p3 0.2 0.47 0.54);
+    background-color: #50a9bf21;
     border-radius: 0px;
     text-align: left;
     font-size: 16px !important;
@@ -1497,6 +1512,24 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
       padding-bottom: 20px;
         padding-top: 5px;
         }
+    
+           .fagzz {
+
+    text-align: center;
+    font-size: 17px !important;
+    font-family: "logicyclist13" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: color(display-p3 0.2 0.47 0.54) !important;
+    line-height: 32px;
+    cursor: default;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 26px;
+
+}
+
     
     
   </style>
@@ -1727,7 +1760,7 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
     </div>
     <div class="faqcontent">            <div class="containeravailability">
           
-            <p class="minetxt">Vérifier la disponibilité locale:</p>
+            <p class="fagzz">Vérifier la disponibilité locale:</p>
     <select id="country-select" class="selectavailability">
       <option value="" disabled selected>Choisir un pays</option>
       <option value="en France" data-status="Peut-être installé " data-cost="5">France</option>
