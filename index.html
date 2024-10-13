@@ -671,8 +671,8 @@ margin-top: -20px !important;
     cursor: default;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 12px;
-    padding-bottom: 20px;
+    padding-top: 4px;
+    padding-bottom: 26px;
 
 }
 
@@ -1906,6 +1906,8 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
       const titleElement = document.getElementById('left-title');
       const subtitleElement = document.getElementById('left-subtitle');
       const mineElement = document.getElementById('mine');
+              const toggleLinkElement = document.getElementById('toggle-link'); // Sélectionner l'élément toggle-link
+
       titleElement.innerText = title;
       subtitleElement.innerText = text;
       mineElement.innerText = mine;
@@ -1914,11 +1916,15 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
       subtitleElement.classList.add('blur-text');
       titleElement.classList.add('blur-text');
       mineElement.classList.add('blur-text');
+              toggleLinkElement.classList.add('blur-text'); // Ajouter le flou à toggle-link
+
 
       setTimeout(() => {
         subtitleElement.classList.remove('blur-text');
         titleElement.classList.remove('blur-text');
         mineElement.classList.remove('blur-text');
+                    toggleLinkElement.classList.remove('blur-text'); // Retirer le flou de toggle-link
+
 
       }, 200);
 
