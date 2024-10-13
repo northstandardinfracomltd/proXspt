@@ -158,10 +158,10 @@ width: 97%;
         input[type="text"],
         input[type="password"] {
 margin-top: 15px;
-    background: #f6f8fa;
-    border: 1px solid #f6f8fa;
-    border-radius: 15px;
-    text-align: left;
+    background: #ebe5eb61;
+    border: 1px solid #ebe5ebdb;
+    border-radius: 90px;
+    text-align: center;
     font-size: 16px !important;
     font-family: "logicyclist13" !important;
     letter-spacing: 0px;
@@ -216,6 +216,14 @@ margin-top: 15px;
     margin-bottom: 30px;
         }
       
+      input::placeholder {
+    font-size: 16px !important;
+    font-family: "logicyclist13" !important;
+    letter-spacing: 0px;
+    color: #000;
+    line-height: 40px;
+      }
+
       
       .back {
     display: inline-block;
@@ -240,6 +248,25 @@ margin-top: 15px;
     margin-top: 40px;
     margin-bottom: 150px;
 }
+      
+      
+      
+      .zerod {
+    text-align: center;
+    font-size: 17px !important;
+    font-family: "logicyclist13" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: #000 !important;
+    line-height: 32px;
+    cursor: default;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+      
+      
     </style>
 </head>
 <body>
@@ -252,7 +279,7 @@ margin-top: 15px;
     <a href="https://www.example.com"><img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/Brouillon.svg?v=1728582252873" alt="Logo"></a>
     <div class="login-container">
       
-              <p class="zerod">Accédez à vos projet et services actifs.</p>
+              <p class="zerod">Veuillez vous identifier pour accéder au suivi de vos projets ou services.</p>
       
       
         <input type="text" id="username" placeholder="Identifiant" oninput="checkInput()">
