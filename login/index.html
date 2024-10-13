@@ -17,62 +17,7 @@
           
     background : linear-gradient(color(display-p3 0.2 0.47 0.54), rgb(103, 78, 173));
         }
-      
-              .robe {
-                
-                    width: 100%;
-    background-color: #52525247;
-    background-image: radial-gradient(circle, #ffffff38 1px, transparent 1px);
-    background-size: 25px 25px;
-    height: 100vh;
-        }
-      
-                    .contentX {
-                text-align: center;
-width: 97%;
-                      max-width: 400px;
-                      margin-left: auto;
-                      margin-right: auto;
-                      margin-top: 200px;
-        }
-      
-      
-      
-      
-        .login-container {
-    background-color : #fff;
-            padding: 20px;
-          -webkit-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
-    -moz-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
-    box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
-            border-radius: 12px;
-          border: none;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        input[type="text"],
-        input[type="password"] {
-margin-top: 15px;
-    background: #f6f8fa;
-    border: 1px solid #f6f8fa;
-    border-radius: 15px;
-    text-align: left;
-    font-size: 22px !important;
-    font-family: "saasduoPAR" !important;
-    letter-spacing: 0px;
-    color: #000;
-    line-height: 40px;
-    cursor: text;
-    width: 90%;
-    max-width: 400px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 9px;
-    padding-bottom: 7px;
-    margin-left: auto;
-    margin-right: auto;
-        }
-      
+
           
           @font-face {
         font-family: logicyclist1;
@@ -177,7 +122,68 @@ font-weight: bold;
 src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Button?v=1692822927520")
 format("opentype");
 }
-    
+          
+              .robe {
+                text-align: center;
+                    width: 100%;
+    background-color: #52525247;
+    background-image: radial-gradient(circle, #ffffff38 1px, transparent 1px);
+    background-size: 25px 25px;
+    height: 100vh;
+        }
+      
+                    .contentX {
+                text-align: center;
+width: 97%;
+                      max-width: 400px;
+                      margin-left: auto;
+                      margin-right: auto;
+                      margin-top: 200px;
+        }
+      
+      
+      
+      
+        .login-container {
+    background-color : #fff;
+            padding: 20px;
+          -webkit-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+    -moz-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+    box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+            border-radius: 12px;
+          border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+margin-top: 15px;
+    background: #f6f8fa;
+    border: 1px solid #f6f8fa;
+    border-radius: 15px;
+    text-align: left;
+    font-size: 16px !important;
+    font-family: "logicyclist13" !important;
+    letter-spacing: 0px;
+    color: #000;
+    line-height: 40px;
+    cursor: text;
+    width: 90%;
+    max-width: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 9px;
+    padding-bottom: 7px;
+    margin-left: auto;
+    margin-right: auto;
+        }
+      
+            input:focus,
+      textarea:focus,
+      button:focus,
+      select:focus {
+        outline: none;
+      }
       
         button {
           
@@ -209,6 +215,31 @@ format("opentype");
     max-width: 300px;
     margin-bottom: 30px;
         }
+      
+      
+      .back {
+    display: inline-block;
+    margin-right: 12px;
+    padding-top: 14px;
+    padding-right: 17px;
+    padding-bottom: 13px;
+    padding-left: 17px;
+    color: black;
+        background: white;
+        text-decoration: none;
+        margin-left: auto;
+        margin-right: auto;
+    border-radius: 90px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 16px !important;
+    font-family: "logicyclist13" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
     </style>
 </head>
 <body>
@@ -220,13 +251,17 @@ format("opentype");
          
     <a href="https://www.example.com"><img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/Brouillon.svg?v=1728582252873" alt="Logo"></a>
     <div class="login-container">
+      
+              <p class="zerod">Accédez à vos projet et services actifs.</p>
+      
+      
         <input type="text" id="username" placeholder="Identifiant" oninput="checkInput()">
         <input type="password" id="password" placeholder="Mot de passe" oninput="checkPassword()">
         <button id="loginBtn" onclick="showError()">Login</button>
         <div class="error" id="errorMessage">Compte inexistant</div>
     </div> </div>       
        
-       <a href="/login" class="call-buttonX">
+       <a href="/login" class="back">
             Retour à l'accueil
         </a>
 
