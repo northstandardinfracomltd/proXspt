@@ -1468,9 +1468,23 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
 }
     
 
+
        .hideX {
             display: none; /* Masquer complètement l'élément */
         }
+    
+    #toggle-link {
+    margin-left: -20px;
+    cursor: pointer;
+    font-size: 17px !important;
+    font-family: "logicyclist13" !important;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: #daff91 !important;
+    line-height: 32px;
+}
+}
+    
   </style>
 </head>
 <body>
@@ -1570,9 +1584,14 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
           <h1 id="left-title" class="titleX">b</h1>
    
     <div class="insidemagic">
-          <h2 id="left-subtitle" class="textX">This is not just a typical gym but a space for muscle strengthening typical gym but a space for muscle strengthening typical.</h2>
 
-      <a href="#" id="toggle-link" style="display:none;">Lire la suite</a>
+      
+
+<span id="left-subtitle" class="textX">Exemple texte</span><a href="#" id="toggle-link" style="display:none;"> Continuer la lecture</a>
+
+
+
+  
 
       
 <script>
@@ -1606,9 +1625,9 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
         // Stocke le texte complet pour l'utiliser plus tard
         subtitleElement.setAttribute('data-full-text', text);
         
-        // Réinitialise le texte du lien "Lire la suite" à son état initial
+        // Réinitialise le texte du lien "Continuer la lecture" à son état initial
         const toggleLink = document.getElementById('toggle-link');
-        toggleLink.innerText = 'Lire la suite'; // Remet le texte à "Lire la suite"
+        toggleLink.innerText = 'Lire la suite'; // Remet le texte à "Continuer la lecture"
       });
     });
 
@@ -1621,12 +1640,12 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
       if (subtitleElement.innerText.endsWith('...')) {
         // Affiche le texte complet
         subtitleElement.innerText = fullText;
-        this.innerText = 'Lire moins'; // Change le texte du lien
+        this.innerText = 'Diminuer le texte'; // Change le texte du lien
       } else {
         // Rétracte à 30 mots
         const limitedText = limitText(fullText);
         subtitleElement.innerText = limitedText;
-        this.innerText = 'Lire la suite'; // Change le texte du lien
+        this.innerText = 'Continuer la lecture'; // Change le texte du lien
       }
     });
   });
