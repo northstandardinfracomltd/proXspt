@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+          
+          
+    background : linear-gradient(color(display-p3 0.2 0.47 0.54), rgb(103, 78, 173));
+        }
+      
+              .robe {
+                
+                    width: 100%;
+    background-color: #52525247;
+    background-image: radial-gradient(circle, #ffffff38 1px, transparent 1px);
+    background-size: 25px 25px;
+    height: 100vh;
+        }
+      
+                    .contentX {
+                
+width: 97%;
+                      max-width: 
+        }
+      
+      
+      
+      
+        .login-container {
+    background-color : linear-gradient(color(display-p3 0.2 0.47 0.54), rgb(103, 78, 173));
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            display: none; /* Masqué par défaut */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            display: none; /* Masqué par défaut */
+        }
+        img {
+            width: 100px; /* Ajustez la taille du logo ici */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+     <div class="robe">
+       
+       
+       <div class="contentX">
+         
+         
+    <a href="https://www.example.com"><img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/Brouillon.svg?v=1728582252873" alt="Logo"></a>
+    <div class="login-container">
+        <input type="text" id="username" placeholder="Identifiant" oninput="checkInput()">
+        <input type="password" id="password" placeholder="Mot de passe" oninput="checkPassword()">
+        <button id="loginBtn" onclick="showError()">Login</button>
+        <div class="error" id="errorMessage">Compte inexistant</div>
+    </div> </div>
+
+    <script>
+        function checkInput() {
+            const username = document.getElementById('username').value;
+            const passwordField = document.getElementById('password');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Afficher le champ mot de passe si l'identifiant a au moins 3 caractères
+            if (username.length >= 3) {
+                passwordField.style.display = 'block';
+            } else {
+                passwordField.style.display = 'none';
+                errorMessage.style.display = 'none'; // Cacher le message d'erreur
+            }
+        }
+
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const loginBtn = document.getElementById('loginBtn');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Afficher le bouton Login si le mot de passe a au moins 3 caractères
+            if (password.length >= 3) {
+                loginBtn.style.display = 'block';
+            } else {
+                loginBtn.style.display = 'none';
+                errorMessage.style.display = 'none'; // Cacher le message d'erreur
+            }
+        }
+
+        function showError() {
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Afficher le message d'erreur si le mot de passe a au moins 3 caractères
+            if (password.length >= 3) {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none'; // Cacher le message d'erreur
+            }
+        }
+    </script>
+          </div>
+</body>
+</html>
