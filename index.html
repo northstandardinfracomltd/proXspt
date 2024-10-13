@@ -171,7 +171,7 @@ format("opentype");
     
     /* Left Column */
 .left-column {
-  width: 60%;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1532,7 +1532,7 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
     
     <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/Brouillon.svg?v=1728582252873" alt="Logo">
   </div>
-        <p class="zerod">Sélectionnez une expertise pour commencer</p>
+        <p class="zerod">Sélectionnez une expertise ou une solution pour commencer.</p>
 
   <div class="left-bottom">
    
@@ -1861,6 +1861,8 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
                   document.querySelector('.magic').style.display = 'block';
                         document.querySelector('.legalblock').style.display = 'block';
                               document.querySelector('.right-column').style.display = 'block';
+      document.querySelector('.left-column').style.width = '60%';
+
 
     });
     
