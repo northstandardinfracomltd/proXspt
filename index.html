@@ -1056,6 +1056,7 @@ body {
     
         
           .insidemagic {
+            padding-top: 30px !important;
     padding: 10px;
     text-align: center;
     border: 0px solid #3A4349;
@@ -1483,7 +1484,15 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
     color: #daff91 !important;
     line-height: 32px;
 }
-}
+
+    
+    .RODE {
+            padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+        padding-top: 5px;
+        }
+    
     
   </style>
 </head>
@@ -1586,10 +1595,10 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
     <div class="insidemagic">
 
       
+ <div class="RODE">
+<span id="left-subtitle" class="textX">Exemple texte</span><a href="#" id="toggle-link" class="enlarge" style="display:none;"> Continuer la lecture</a>
 
-<span id="left-subtitle" class="textX">Exemple texte</span><a href="#" id="toggle-link" style="display:none;"> Continuer la lecture</a>
-
-
+      </div>
 
   
 
@@ -1627,11 +1636,11 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
         
         // Réinitialise le texte du lien "Continuer la lecture" à son état initial
         const toggleLink = document.getElementById('toggle-link');
-        toggleLink.innerText = 'Lire la suite'; // Remet le texte à "Continuer la lecture"
+        toggleLink.innerText = 'Continuer la lecture'; // Remet le texte à "Continuer la lecture"
       });
     });
 
-    // Gestion du clic sur le lien "Lire la suite"
+    // Gestion du clic sur le lien "Continuer la lecture"
     document.getElementById('toggle-link').addEventListener('click', function (e) {
       e.preventDefault(); // Empêche le comportement par défaut du lien
       const subtitleElement = document.getElementById('left-subtitle');
