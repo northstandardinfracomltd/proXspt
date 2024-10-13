@@ -227,8 +227,8 @@ format("opentype");
     .left-bottom {
       background: linear-gradient(0deg, #242e35db, transparent);
       z-index: 1;
-      padding: 30px;
-      padding-bottom: 120px;
+      padding: 20px;
+      padding-bottom: 92px;
       position: sticky;
       bottom: 0;
       
@@ -247,7 +247,7 @@ format("opentype");
 
     /* Right Column */
     .right-column {
-      
+      display: none;
       align-content: center;
       width: 40%;
       overflow-y: auto;
@@ -1451,12 +1451,22 @@ border-bottom: 0px solid transparent !important;
     padding-right: 10px;
     padding-top: 12px;
     padding-bottom: 20px;
-    top: 50%;
-                       transition: opacity 0s ease; /* Transition douce lors du masquage */
+                        
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+           
+           
+transition: opacity 0s ease; /* Transition douce lors du masquage */
 
 
 }
      
+            .fisio {
+    margin-right: 12px !important;
+}
+    
 
        .hideX {
             display: none; /* Masquer complètement l'élément */
@@ -1522,7 +1532,8 @@ border-bottom: 0px solid transparent !important;
     
     <img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/Brouillon.svg?v=1728582252873" alt="Logo">
   </div>
-  
+        <p class="zerod">Sélectionnez une expertise pour commencer</p>
+
   <div class="left-bottom">
    
             <div class="contactdiv">
@@ -1530,7 +1541,7 @@ border-bottom: 0px solid transparent !important;
               
    <div class="button-containerX">
      
-        <a href="tel:+33123456789" class="call-buttonX">
+        <a href="tel:+33123456789" class="call-buttonX fisio">
             Contacter un spécialiste
         </a>
      
@@ -1552,7 +1563,6 @@ border-bottom: 0px solid transparent !important;
     <div class="right-column">
       
       
-      <p class="zerod">Sélectionnez une expertise pour commencer</p>
       
 
  <div class="magic">
@@ -1770,6 +1780,17 @@ border-bottom: 0px solid transparent !important;
 
    
     </div>
+    
+    <script>
+  document.querySelector('.left-column').addEventListener('wheel', function(event) {
+    event.preventDefault();
+    // Sélectionne la colonne de droite
+    const rightColumn = document.querySelector('.right-column');
+    // Applique le scroll de la colonne gauche à la colonne droite
+    rightColumn.scrollTop += event.deltaY;
+  });
+</script>
+    
   </div>
 
 
@@ -1839,6 +1860,7 @@ border-bottom: 0px solid transparent !important;
             document.querySelector('.contactdiv').style.display = 'block';
                   document.querySelector('.magic').style.display = 'block';
                         document.querySelector('.legalblock').style.display = 'block';
+                              document.querySelector('.right-column').style.display = 'block';
 
     });
     
