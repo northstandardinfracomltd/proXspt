@@ -1412,6 +1412,29 @@ border-bottom: 0px solid transparent !important;
     margin-top: 0px;
         }
     
+    
+    
+    
+    .left-column::before,
+.footext {
+    filter: blur(5px); /* Ajoute un flou de 5px au départ */
+    transition: filter 0.3s ease; /* Transition douce lors du changement */
+}
+
+.left-column::before.clear,
+.footext.clear {
+    filter: none; /* Enlève le flou lorsque la classe 'clear' est ajoutée */
+}
+    
+    
+    .magic {
+    display: none;
+}
+    
+        .legalblock {
+    display: none;
+}
+    
   </style>
 </head>
 <body>
@@ -1497,7 +1520,7 @@ border-bottom: 0px solid transparent !important;
     <div class="right-column">
       
       
-      
+      <p class="minetxt">Sélectionnez une expertise</p>
       
 
  <div class="magic">
@@ -1782,6 +1805,8 @@ border-bottom: 0px solid transparent !important;
       // Afficher la div .faqparent après le clic
       document.querySelector('.faqparent').style.display = 'block';
             document.querySelector('.contactdiv').style.display = 'block';
+                  document.querySelector('.magic').style.display = 'block';
+                  document.querySelector('.legalblock').style.display = 'block';
 
     });
     
@@ -1857,7 +1882,22 @@ border-bottom: 0px solid transparent !important;
         });
     </script>
 
-  
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Sélectionner tous les boutons avec la classe ib2
+            const buttons = document.querySelectorAll('.ib2');
+            const backgroundImage = document.querySelector('.left-column::before');
+            const footext = document.querySelector('.footext');
+
+            // Ajouter un gestionnaire d'événement à chaque bouton
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    backgroundImage.classList.add('clear');
+                    footext.classList.add('clear');
+                });
+            });
+        });
+    </script>
   
   
   
