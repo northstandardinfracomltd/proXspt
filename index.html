@@ -1357,12 +1357,16 @@ padding: 10px;
     font-family: "logicyclist13" !important;
     font-weight: 400;
     letter-spacing: 0px;
-              -webkit-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
-    -moz-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
-    box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 14%);
+              -webkit-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 7%);
+    -moz-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 7%);
+    box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 7%);
         }
         .faqbutton:hover {
-            background-color: #0056b3;
+    box-shadow: 0 0 0px 4px #008eff38;
+    cursor: pointer;
+    color: white;
+    transition-duration: 0s;
+    background: color(display-p3 0 0.50588 0.94902);
         }
     
     .selectavailability {
@@ -1631,9 +1635,9 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
             Contacter un spécialiste
         </a>
      
-             <a href="/login" class="call-buttonX">
-            Accès à votre compte
-        </a>
+<a href="/login" class="call-buttonX" target="_blank">
+    Accès à votre compte
+</a>
      
      
     </div>
