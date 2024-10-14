@@ -157,7 +157,7 @@ margin-top: 120px;
 margin-top: 15px;
     background: #ebe5eb61;
     border: 1px solid #ebe5ebdb;
-    border-radius: 90px;
+    border-radius: 10px;
           display: block;
     text-align: center;
     font-size: 16px !important;
@@ -167,13 +167,16 @@ margin-top: 15px;
     line-height: 40px;
     cursor: text;
     width: 100%;
-    max-width: 300px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
     padding-top: 9px;
     padding-bottom: 7px;
     margin-left: auto;
     margin-right: auto;
+          
+              -webkit-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 7%);
+    -moz-box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 7%);
+    box-shadow: 0px 0px 30px 0px rgb(36 46 53 / 7%);
         }
       
             input:focus,
@@ -183,11 +186,18 @@ margin-top: 15px;
         outline: none;
       }
       
+      
+     button:hover {
+    cursor: pointer;
+    transition-duration: 0s;
+    background: #7357c1;
+}
+      
+      
         button {
     background: #674ead;
     box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, .2), inset 0 -1px 2px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .05);
     width: 100%;
-              max-width: 300px;
     padding: 9px 15px;
     padding-top: 11px !important;
     margin-left: 0px !important;
@@ -201,7 +211,7 @@ margin-top: 15px;
     font-weight: 400;
     letter-spacing: 0px;
     line-height: 35px;
-    margin-top: 5px;
+    margin-top: 17px;
     margin-bottom: 0px !important;
         }
         .error {
@@ -211,15 +221,15 @@ margin-top: 15px;
         }
         img {
     width: 97%;
-    max-width: 300px;
-    margin-bottom: 30px;
+    max-width: 250px;
+    margin-bottom: 45px;
         }
       
       input::placeholder {
     font-size: 16px !important;
     font-family: "logicyclist13" !important;
     letter-spacing: 0px;
-    color: #000;
+    color: #ab9da9;
     line-height: 40px;
       }
 
@@ -227,12 +237,9 @@ margin-top: 15px;
       .back {
     display: inline-block;
     margin-right: 12px;
-    padding-top: 14px;
-    padding-right: 17px;
-    padding-bottom: 13px;
-    padding-left: 17px;
-    color: black;
-        background: white;
+    padding: 17px 24px 16px 24px;
+    color: #fff;
+        background: #242e35d9;
         text-decoration: none;
         margin-left: auto;
         margin-right: auto;
@@ -246,6 +253,15 @@ margin-top: 15px;
     line-height: 15px;
     margin-top: 40px;
     margin-bottom: 340px;
+}
+      
+      
+      .back:hover {
+    box-shadow: 0 0 0px 4px #242e355e;
+    cursor: pointer;
+    color: white;
+    transition-duration: 0s;
+    background-color: #242e35ed;
 }
       
       
@@ -278,17 +294,17 @@ margin-top: 15px;
     <a href="https://www.example.com"><img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/Brouillon.svg?v=1728582252873" alt="Logo"></a>
     <div class="login-container">
       
-              <p class="zerod">Veuillez vous identifier pour accéder au suivi de vos projets ou services.</p>
+              <p class="zerod">Veuillez vous identifier avec les informations fournies par votre interlocuteur pour accéder à la gestion de vos projets et services.</p>
       
       
         <input autofocus type="text" id="username" placeholder="Identifiant" oninput="checkInput()">
         <input type="password" id="password" placeholder="Mot de passe" oninput="checkPassword()">
-        <button id="loginBtn" onclick="showError()">Login</button>
+        <button id="loginBtn" onclick="showError()">Connexion</button>
         <div class="error" id="errorMessage">Compte inexistant</div>
     </div> </div>       
        
        <a href="/login" class="back">
-            Retour à l'accueil
+            Annuler
         </a>
 
     <script>
