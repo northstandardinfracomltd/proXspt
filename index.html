@@ -2035,38 +2035,64 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
   
   
 <script>
-  const buttonContainer = document.querySelector('.button-container');
-  const leftButton = document.getElementById('scroll-left');
-  const rightButton = document.getElementById('scroll-right');
+const buttonContainer = document.querySelector('.button-container');
+const leftButton = document.getElementById('scroll-left');
+const rightButton = document.getElementById('scroll-right');
 
-  function updateButtonVisibility() {
-    const scrollLeft = buttonContainer.scrollLeft;
-    const scrollWidth = buttonContainer.scrollWidth;
-    const clientWidth = buttonContainer.clientWidth;
+// Paramètre de seuil de visibilité (0.5 = 50% visible)
+const visibilityThreshold = 0.9; 
 
-    // Masquer le bouton gauche si on est tout à gauche
-    leftButton.style.display = scrollLeft === 0 ? 'none' : 'block';
+// Fonction pour vérifier si un bouton est suffisamment visible
+function isButtonVisible(button) {
+  const buttonRect = button.getBoundingClientRect();
+  const containerRect = buttonContainer.getBoundingClientRect();
 
-    // Masquer le bouton droit si on est tout à droite
-    rightButton.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'block';
+  // Calcul de la zone visible du bouton par rapport au conteneur
+  const visibleWidth = Math.min(buttonRect.right, containerRect.right) - Math.max(buttonRect.left, containerRect.left);
+  return visibleWidth / buttonRect.width >= visibilityThreshold;
+}
+
+// Fonction pour gérer l'affichage des boutons et l'espacement
+function updateButtonVisibility() {
+  const scrollLeft = buttonContainer.scrollLeft;
+  const scrollWidth = buttonContainer.scrollWidth;
+  const clientWidth = buttonContainer.clientWidth;
+
+  // Masquer le bouton gauche si on est tout à gauche
+  leftButton.style.display = scrollLeft === 0 ? 'none' : 'block';
+
+  // Masquer le bouton droit si on est tout à droite
+  rightButton.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'block';
+
+  // Réinitialiser le margin-right des boutons
+  const buttons = document.querySelectorAll('.button-container button');
+  buttons.forEach(button => button.style.marginRight = '20px');
+
+  // Ajuster le dernier bouton visible selon le seuil de visibilité
+  const lastVisibleButton = Array.from(buttons).reverse().find(button => isButtonVisible(button));
+  if (lastVisibleButton) {
+    lastVisibleButton.style.marginRight = '80px'; // Ajuster le margin-right du dernier bouton visible
   }
+}
 
-  // Appeler la fonction pour mettre à jour la visibilité des boutons au chargement
+// Appeler la fonction pour mettre à jour la visibilité des boutons au chargement
+updateButtonVisibility();
+
+// Événements pour faire défiler à gauche et à droite
+leftButton.addEventListener('click', () => {
+  buttonContainer.scrollBy({ left: -buttonContainer.clientWidth, behavior: 'smooth' });
   updateButtonVisibility();
+});
 
-  // Événements pour faire défiler à gauche et à droite
-  leftButton.addEventListener('click', () => {
-    buttonContainer.scrollBy({ left: -buttonContainer.clientWidth, behavior: 'smooth' });
-    updateButtonVisibility();
-  });
+rightButton.addEventListener('click', () => {
+  buttonContainer.scrollBy({ left: buttonContainer.clientWidth, behavior: 'smooth' });
+  updateButtonVisibility();
+});
 
-  rightButton.addEventListener('click', () => {
-    buttonContainer.scrollBy({ left: buttonContainer.clientWidth, behavior: 'smooth' });
-    updateButtonVisibility();
-  });
+// Ajouter un écouteur d'événement pour mettre à jour la visibilité lors du défilement et lors du redimensionnement de la fenêtre
+buttonContainer.addEventListener('scroll', updateButtonVisibility);
+window.addEventListener('resize', updateButtonVisibility);
 
-  // Ajouter un écouteur d'événement pour mettre à jour la visibilité lors du défilement
-  buttonContainer.addEventListener('scroll', updateButtonVisibility);
 </script>
 
 
