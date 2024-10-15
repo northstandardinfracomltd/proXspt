@@ -400,7 +400,7 @@ border: none;
   background-color: #fff;
   padding: 8px;
   padding-left: 0px !important;
-  padding-right: 55px !important;
+  padding-right: 0px !important;
   z-index: 2;
   overflow-x: auto;
   white-space: nowrap;
@@ -1559,7 +1559,7 @@ transition: opacity 0s ease; /* Transition douce lors du masquage */
 
     
                .labaise {
-margin-right: 30px !important;
+margin-right: 20px !important;
 
 }
 
@@ -2041,13 +2041,11 @@ margin-right: 30px !important;
 </script>
   
   
-  
 <script>
-
-  
- const buttonContainer = document.querySelector('.button-container');
+  const buttonContainer = document.querySelector('.button-container');
   const leftButton = document.getElementById('scroll-left');
   const rightButton = document.getElementById('scroll-right');
+  const labaiseButton = document.querySelector('.labaise');
 
   function updateButtonVisibility() {
     const scrollLeft = buttonContainer.scrollLeft;
@@ -2057,8 +2055,11 @@ margin-right: 30px !important;
     // Masquer le bouton gauche si on est tout à gauche
     leftButton.style.display = scrollLeft === 0 ? 'none' : 'block';
 
-    // Masquer le bouton droit si on est tout à droite
-    rightButton.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'block';
+    // Vérifier si le bouton .labaise est visible
+    const labaiseVisible = labaiseButton.getBoundingClientRect().right <= buttonContainer.getBoundingClientRect().right;
+
+    // Masquer le bouton droit si on est tout à droite ou si .labaise est visible
+    rightButton.style.display = (scrollLeft + clientWidth >= scrollWidth || labaiseVisible) ? 'none' : 'block';
   }
 
   // Appeler la fonction pour mettre à jour la visibilité des boutons au chargement
@@ -2066,19 +2067,20 @@ margin-right: 30px !important;
 
   // Événements pour faire défiler à gauche et à droite
   leftButton.addEventListener('click', () => {
-    buttonContainer.scrollBy({ left: -buttonContainer.clientWidth, behavior: 'smooth' });
+    buttonContainer.scrollBy({ left: -buttonContainer.clientWidth * 0.3, behavior: 'smooth' });
     updateButtonVisibility();
   });
 
   rightButton.addEventListener('click', () => {
-    buttonContainer.scrollBy({ left: buttonContainer.clientWidth, behavior: 'smooth' });
+    buttonContainer.scrollBy({ left: buttonContainer.clientWidth * 0.3, behavior: 'smooth' });
     updateButtonVisibility();
   });
 
   // Ajouter un écouteur d'événement pour mettre à jour la visibilité lors du défilement
   buttonContainer.addEventListener('scroll', updateButtonVisibility);
-
 </script>
+
+
 
 
 
