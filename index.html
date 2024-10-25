@@ -1682,60 +1682,48 @@ body {
 
       
 <script>
-  // Fonction pour limiter le texte à 30 mots
-  function limitText(text) {
-    const words = text.split(' ');
-    return words.length > 30 ? words.slice(0, 30).join(' ') + '...' : text;
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.ib2').forEach(button => {
+    button.addEventListener('click', function () {
+      const title = this.getAttribute('data-title');
+      const text = this.getAttribute('data-text');
+      const mine = this.getAttribute('data-mine');
 
-  // Lorsque le DOM est chargé
-  document.addEventListener('DOMContentLoaded', function () {
-    // Pour chaque bouton, ajouter un écouteur d'événements
-    document.querySelectorAll('.ib2').forEach(button => {
-      button.addEventListener('click', function () {
-        const title = this.getAttribute('data-title');
-        const text = this.getAttribute('data-text');
-        const mine = this.getAttribute('data-mine');
+      // Met à jour le titre
+      const titleElement = document.getElementById('left-title');
+      titleElement.innerText = title;
 
-        // Met à jour le titre
-        const titleElement = document.getElementById('left-title');
-        titleElement.innerText = title;
-
-        // Limite le texte à 30 mots
-        const limitedText = limitText(text);
-        const subtitleElement = document.getElementById('left-subtitle');
-        subtitleElement.innerText = limitedText; // Affiche les 30 premiers mots
-        
-        // Affiche le lien si le texte dépasse 30 mots
-        document.getElementById('toggle-link').style.display = text.split(' ').length > 30 ? 'inline' : 'none';
-
-        // Stocke le texte complet pour l'utiliser plus tard
-        subtitleElement.setAttribute('data-full-text', text);
-        
-        // Réinitialise le texte du lien "Continuer la lecture" à son état initial
-        const toggleLink = document.getElementById('toggle-link');
-        toggleLink.innerText = 'Continuer la lecture'; // Remet le texte à "Continuer la lecture"
-      });
-    });
-
-    // Gestion du clic sur le lien "Continuer la lecture"
-    document.getElementById('toggle-link').addEventListener('click', function (e) {
-      e.preventDefault(); // Empêche le comportement par défaut du lien
+      // Limite le texte à 30 mots
+      const limitedText = limitText(text);
       const subtitleElement = document.getElementById('left-subtitle');
-      const fullText = subtitleElement.getAttribute('data-full-text'); // Récupère le texte complet
+      subtitleElement.innerText = limitedText;
+      document.getElementById('toggle-link').style.display = text.split(' ').length > 30 ? 'inline' : 'none';
+      subtitleElement.setAttribute('data-full-text', text);
 
-      if (subtitleElement.innerText.endsWith('...')) {
-        // Affiche le texte complet
-        subtitleElement.innerText = fullText;
-        this.innerText = 'Diminuer le texte'; // Change le texte du lien
-      } else {
-        // Rétracte à 30 mots
-        const limitedText = limitText(fullText);
-        subtitleElement.innerText = limitedText;
-        this.innerText = 'Continuer la lecture'; // Change le texte du lien
-      }
+      const toggleLink = document.getElementById('toggle-link');
+      toggleLink.innerText = 'Continuer la lecture';
+
+      // Remonte le scroll de la .right-column
+      document.querySelector('.right-column').scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
+
+  document.getElementById('toggle-link').addEventListener('click', function (e) {
+    e.preventDefault();
+    const subtitleElement = document.getElementById('left-subtitle');
+    const fullText = subtitleElement.getAttribute('data-full-text');
+
+    if (subtitleElement.innerText.endsWith('...')) {
+      subtitleElement.innerText = fullText;
+      this.innerText = 'Diminuer le texte';
+    } else {
+      const limitedText = limitText(fullText);
+      subtitleElement.innerText = limitedText;
+      this.innerText = 'Continuer la lecture';
+    }
+  });
+});
+
 </script>
 
 
