@@ -283,7 +283,7 @@ format("opentype");
     .right-column {
       display: none;
       align-content: center;
-      width: 40%;
+      width: 45%;
       overflow-y: auto;
       padding: 55px;
           height: 100%;
@@ -1702,43 +1702,48 @@ body {
         const limitedText = limitText(text);
         const subtitleElement = document.getElementById('left-subtitle');
         subtitleElement.innerText = limitedText; // Affiche les 30 premiers mots
-        
+
         // Affiche le lien si le texte dépasse 30 mots
         document.getElementById('toggle-link').style.display = text.split(' ').length > 30 ? 'inline' : 'none';
 
         // Stocke le texte complet pour l'utiliser plus tard
         subtitleElement.setAttribute('data-full-text', text);
-        
+
         // Réinitialise le texte du lien "Continuer la lecture" à son état initial
         const toggleLink = document.getElementById('toggle-link');
-        toggleLink.innerText = 'Continuer la lecture'; // Remet le texte à "Continuer la lecture"
-        
+        toggleLink.innerText = 'Continuer la lecture';
+
         // Fait défiler .right-column vers le haut
         const rightColumn = document.querySelector('.right-column');
-        rightColumn.scrollTop = 0; // Remet le scroll en haut
+        rightColumn.scrollTop = 0;
+
+        // Masque la div avec la classe "faqparent" si le bouton cliqué est "button3" ou "button19"
+        if (this.id === 'button3' || this.id === 'button19') {
+          const faqParent = document.querySelector('.faqparent');
+          if (faqParent) faqParent.style.display = 'none';
+        }
       });
     });
 
     // Gestion du clic sur le lien "Continuer la lecture"
     document.getElementById('toggle-link').addEventListener('click', function (e) {
-      e.preventDefault(); // Empêche le comportement par défaut du lien
+      e.preventDefault();
       const subtitleElement = document.getElementById('left-subtitle');
-      const fullText = subtitleElement.getAttribute('data-full-text'); // Récupère le texte complet
+      const fullText = subtitleElement.getAttribute('data-full-text');
 
       if (subtitleElement.innerText.endsWith('...')) {
         // Affiche le texte complet
         subtitleElement.innerText = fullText;
-        this.innerText = 'Diminuer le texte'; // Change le texte du lien
+        this.innerText = 'Diminuer le texte';
       } else {
         // Rétracte à 30 mots
         const limitedText = limitText(fullText);
         subtitleElement.innerText = limitedText;
-        this.innerText = 'Continuer la lecture'; // Change le texte du lien
+        this.innerText = 'Continuer la lecture';
       }
     });
   });
 </script>
-
 
 
 
@@ -2042,7 +2047,7 @@ body {
                   document.querySelector('.magic').style.display = 'block';
                         document.querySelector('.legalblock').style.display = 'block';
                               document.querySelector('.right-column').style.display = 'block';
-      document.querySelector('.left-column').style.width = '60%';
+      document.querySelector('.left-column').style.width = '55%';
 
 
     });
