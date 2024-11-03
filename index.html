@@ -1145,7 +1145,8 @@ padding-bottom: 6.5px !important;
 
       .right-column {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
+        height: auto;
 }
       
       .left-bottom {
@@ -1718,7 +1719,9 @@ body {
                 if (leftColumn) {
                     leftColumn.style.height = "300px";
                 }
-
+                if (rightColumn) {
+                    rightColumn.style.overflowY = "hidden";
+                }
             }
         }
 
@@ -1731,6 +1734,8 @@ body {
         });
     });
 </script>
+
+
 
 
   
