@@ -152,6 +152,37 @@ font-weight: bold;
 src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Button?v=1692822927520")
 format("opentype");
 }
+      
+      
+      
+                @media (max-width: 767px) {
+img {
+    width: 97% !important;
+    max-width: 200px !important;
+    margin-bottom: 50px !important;
+    margin-top: 25px !important;
+}
+            
+            .contentX {
+    width: 95% !important;
+}
+            
+            .zerod {
+    font-size: 14px !important;
+    line-height: 26px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+            
+            .back {
+    padding: 14px 20px 13px 21px !important;
+    font-size: 14px !important;
+    margin-top: 20px !important;
+}
+            
+     }
           
               .robe {
                  height: 100vh;
@@ -334,13 +365,22 @@ margin-top: 15px;
     </style>
 </head>
 <body>
+  
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Vérification si l'utilisateur est sur mobile
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                window.location.href = "/";
+            }
+        });
+    </script>
      <div class="robe">
        
        
        <div class="contentX">
          
          
-    <a href="https://www.example.com"><img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/Brouillon.svg?v=1728582252873" alt="Logo"></a>
+    <a href="/"><img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/Brouillon.svg?v=1728582252873" alt="Logo"></a>
     <div class="login-container">
       
               <p class="zerod">Veuillez vous identifier avec les informations fournies par votre interlocuteur pour accéder à la gestion de vos projets et services.</p>
