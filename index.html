@@ -1693,7 +1693,47 @@ body {
 <a href="#"><button class="ib2" id="button15" data-mine="Tarif : à partir de £5k + TVA (20%)" data-title="Le théâtre des décisions éclairées!" data-text="Imaginons et créons des espaces pour travailler ou se divertir. Il peut s’agir, par exemple, d’un petit amphithéâtre équipé d’un projecteur utilisé comme salle de projection ou de conférence pour des briefings ou des séminaires. Il peut aussi tout simplement s’agir d’un espace de coworking. ProximaSport vous propose l’installation de cet espace autonome, accessible par une porte sécurisée grâce au badge expérience sport. L’ensemble du matériel et de l’aménagement de l’espace est organisé par ProximaSport et personnalisé à l’effigie de votre établissement." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/Cinema-Logicyclist.svg?v=1721723194013" data-color="linear-gradient(180deg, color(display-p3 0.2 0.47 0.54), #674ead)">Espaces Extra Sportifs</button></a>
 <a href="#"><button class="ib2" id="button3" data-mine="Tarif : à partir de £5k + TVA (20%)" data-title="Les ingrédients des synergies!" data-text="En tant qu’établissement local proposant des solutions cycling-friendly, il est essentiel de s’ouvrir et de s’informer en tant qu’expert sur les parcours environnants pour maximiser les relations et les conseils auprès de votre clientèle. Par ailleurs, la constitution d’une communauté locale joue un rôle déterminant pour la réputation et le bouche-à-oreille de l’établissement. ProximaSport vous propose un audit et une étude locale, aboutissant à la création d’une infographie, d’un plan et de vidéos sur les parcours locaux, qui serviront de base pour vos communications, sans oublier une formation destinée à vos employés clés pour acquérir ces connaissances. Un autre axe de travail sera celui de la communauté, en appliquant des solutions en lien avec la culture, les traditions et les usages de cette clientèle spécifique, au bénéfice de votre établissement." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/BestRoutes.svg?v=1722197281228" data-color="linear-gradient(180deg, color(display-p3 0.2 0.47 0.54), #674ead)">Exploitation Locale</button></a>
 <a href="#"><button class="ib2 labaise" id="button19" data-mine="Tarif : à partir de £5k + TVA (20%)" data-title="Une expérience fantastique!" data-text="ProximaSport développe en interne et en marque blanche pour ses clients des solutions numériques (ex. : affichages dynamiques, applications mobiles, plateformes, etc.) en fonction de l’expérience de chaque établissement. Par ailleurs, le sport est un vecteur visuel que nous vous proposons d’exploiter à travers la production de médias tels que des vidéos (ex. : documentaires, publicités, etc.). Ces supports constituent des moyens de communication fiables, intemporels et faciles d’utilisation pour toutes vos actions de communication ou de marketing." data-image="https://cdn.glitch.global/8c26625f-2634-4f3f-adfe-5c695bc27700/LogicyclistIllustration9995.svg?v=1724419558885" data-color="linear-gradient(180deg, color(display-p3 0.2 0.47 0.54), #674ead)">Digital et Média</button></a>
-        
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Liste des ID spécifiques des boutons .ib2
+        const buttonIds = [
+            "button22", "button11", "button2", "button1", "button20", "button14",
+            "button7", "button23", "button24", "button4", "button18", "button17",
+            "button5", "button13", "button6", "button12", "button8", "button9",
+            "button21", "button15", "button3", "button19"
+        ];
+
+        // Vérifie si l'écran est de 767px ou moins
+        function isMobile() {
+            return window.innerWidth <= 767;
+        }
+
+        // Applique le style "height: 300px" sur la classe ".left-column" et désactive "overflow-y" sur ".right-column"
+        function applyStyleChanges() {
+            if (isMobile()) {
+                const leftColumn = document.querySelector(".left-column");
+                const rightColumn = document.querySelector(".right-column");
+
+                if (leftColumn) {
+                    leftColumn.style.height = "300px";
+                }
+
+            }
+        }
+
+        // Ajoute l'écouteur de clic pour chaque bouton avec l'ID spécifié et la classe ".ib2"
+        buttonIds.forEach(id => {
+            const button = document.getElementById(id);
+            if (button && button.classList.contains("ib2")) {
+                button.addEventListener("click", applyStyleChanges);
+            }
+        });
+    });
+</script>
+
+
+  
 </div>
 <button id="scroll-right" class="science">Plus</button>  
 </div>
