@@ -2133,15 +2133,13 @@ Vient ensuite la phase de construction ou de montage : notre équipe intervient 
         Disponibilité<button class="faqbutton">Informations</button>
     </div>
     <div class="faqcontent faqcontentender">            <div class="containeravailability">
-          
-            <p class="fagzz">Vérifier la disponibilité locale:</p>
-    <select id="country-select" class="selectavailability">
+              <select id="country-select" class="selectavailability">
       <option value="" disabled selected>Choisir un pays</option>
-      <option value="en France" data-status="Peut-être installé " data-cost="5">France</option>
-      <option value="en Espagne" data-status="Peut-être installé " data-cost="5">Espagne</option>
-      <option value="en Allemagne" data-status="Peut-être installé " data-cost="5">Allemagne</option>
-      <option value="au Royaume-Uni" data-status="Peut-être installé " data-cost="5">Royaume-Uni</option>
-      <option value="au Portugal" data-status="Peut-être installé " data-cost="5">Portugal</option>
+      <option value="en France" data-status="ProximaSport est en capacité d'installer cette solution " data-cost="1,000">France</option>
+      <option value="en Espagne" data-status="ProximaSport est en capacité d'installer cette solution " data-cost="1,100">Espagne</option>
+      <option value="en Allemagne" data-status="ProximaSport est en capacité d'installer cette solution " data-cost="1,700">Allemagne</option>
+      <option value="au Royaume-Uni" data-status="ProximaSport est en capacité d'installer cette solution " data-cost="1,700">Royaume-Uni</option>
+      <option value="au Portugal" data-status="ProximaSport est en capacité d'installer cette solution " data-cost="1,000">Portugal</option>
     </select>
 
     <div id="availability-info" class="infoavailability hiddenavailability">
@@ -2169,7 +2167,7 @@ Vient ensuite la phase de construction ou de montage : notre équipe intervient 
       
       // Update the availability info
       const infoDiv = document.getElementById('availability-info');
-      infoDiv.textContent = `${status} ${country} à partir du ${futureDate}. Frais d'étude technique personnalisée de £${cost}k (hors taxes). Des frais logistiques complémentaires peuvent s'appliquer. Des modificatons spécifiques a la conformité locale peuvent devenir nécessaires.`;
+      infoDiv.textContent = `${status} ${country} à partir du ${futureDate}. Un frais unique pour l'étude de £${cost} (taxes comprises, 20%) s'applique.`;
       infoDiv.classList.remove('hiddenavailability');
     });
   </script>
