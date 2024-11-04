@@ -1449,20 +1449,20 @@ font-size: 26px !important;
     background-image: none;
 }
 .selectavailability {
-    width: 170px;
+    width: auto;
+    height: 50px;
     margin-left: auto;
     margin-right: auto;
     font-size: 16px ;
     font-family: "logicyclist13" !important;
     font-weight: 400;
     letter-spacing: 0px;
-    padding-top: 16px ;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-top: 15px ;
+    padding-left: 25px;
+    padding-right: 25px;
     padding-bottom: 15px;
     top: 10px;
     border: 1px solid color(display-p3 0.2 0.47 0.54);
-    padding: 10px 15px;
     cursor: pointer;
     z-index: 100000;
     color: #fff;
@@ -2100,16 +2100,7 @@ text-decoration: none;
       
  
 
-<div class="faqdiv">
-    <div class="faqtitle" onclick="toggleFAQ(this)">
-        Maintenance<button class="faqbutton">Informations</button>
-    </div>
-    <div class="faqcontent">
-  
-En fonction du projet et de ses composants, ProximaSport assure une maintenance préventive annuelle de votre installation. En cas de besoin d’intervention supplémentaire (dommages, modifications, etc.), ProximaSport peut intervenir sous 24h à 15 jours ouvrés, selon la priorité et la disponibilité des pièces nécessaires pour répondre à votre demande. Par défaut, un contrat de maintenance est gratuit la première année. 
-  
-  </div>
-</div>
+
 
       <div class="faqdiv">
     <div class="faqtitle" onclick="toggleFAQ(this)">
@@ -2125,6 +2116,18 @@ En fonction du projet et de ses composants, ProximaSport assure une maintenance 
 
 
         </div>
+</div>
+      
+      
+      <div class="faqdiv">
+    <div class="faqtitle" onclick="toggleFAQ(this)">
+        Maintenance<button class="faqbutton">Informations</button>
+    </div>
+    <div class="faqcontent">
+  
+En fonction du projet et de ses composants, ProximaSport assure une maintenance préventive annuelle de votre installation. En cas de besoin d’intervention supplémentaire (dommages, modifications, etc.), ProximaSport peut intervenir sous 24h à 15 jours ouvrés, selon la priorité et la disponibilité des pièces nécessaires pour répondre à votre demande. Par défaut, un contrat de maintenance est gratuit la première année. 
+  
+  </div>
 </div>
       
       
@@ -2144,7 +2147,9 @@ En fonction du projet et de ses composants, ProximaSport assure une maintenance 
       <option value="en Allemagne" data-status="ProximaSport est en capacité d'installer cette solution " data-cost="1,700">Allemagne</option>
       <option value="au Royaume-Uni" data-status="ProximaSport est en capacité d'installer cette solution " data-cost="1,700">Royaume-Uni</option>
       <option value="au Portugal" data-status="ProximaSport est en capacité d'installer cette solution " data-cost="1,000">Portugal</option>
-    </select>
+         <option value="en Italie" data-status="ProximaSport est en capacité d'installer cette solution " data-cost="1,300">Italie</option>
+
+      </select>
 
     <div id="availability-info" class="infoavailability hiddenavailability">
       <!-- The result will be displayed here -->
@@ -2171,7 +2176,7 @@ En fonction du projet et de ses composants, ProximaSport assure une maintenance 
       
       // Update the availability info
       const infoDiv = document.getElementById('availability-info');
-      infoDiv.textContent = `${status} ${country} à partir du ${futureDate}. Un frais unique pour l'étude de £${cost} (taxes comprises, 20%) s'applique.`;
+      infoDiv.textContent = `${status} ${country} à partir du ${futureDate}. Un frais unique pour l'étude de £${cost} s'applique (taxes comprises, 20%).`;
       infoDiv.classList.remove('hiddenavailability');
     });
   </script>
