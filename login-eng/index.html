@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="eng">
 <head>
 
 <meta charset="UTF-8" />
@@ -14,27 +14,26 @@
 <link rel="canonical" href="proximasports.com" />
 
 <!-- META TAGS -->
-<title>ProximaSport I Français, France I proximasport.com</title>
-<meta name="title" content="ProximaSport I Français, France I proximasport.com" />
+<title>ProximaSport I English, UK I proximasport.com/eng</title>
+<meta name="title" content="ProximaSport I English, UK I proximasport.com/eng" />
 <meta name="description" content="Express Your Experience. Go Bike-Friendly." />
 
 <!--SOCIALS -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://proximasport.com/" />
-<meta property="og:title" content="ProximaSport I Français, France I proximasport.com" />
+<meta property="og:title" content="ProximaSport I English, UK I proximasport.com/eng" />
 <meta property="og:description" content="Express Your Experience. Go Bike-Friendly." />
 <meta property="og:image" content="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/ProximaSport%20SEO%20BANNER%20GOOGLE%20V2.png?v=1731337411246" />
 
 <!-- X -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://proximasport.com/" />
-<meta property="twitter:title" content="ProximaSport I Français, France I proximasport.com" />
+<meta property="twitter:title" content="ProximaSport I English, UK I proximasport.com/eng" />
 <meta property="twitter:description" content="Express Your Experience. Go Bike-Friendly." />
 <meta property="twitter:image" content="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/ProximaSport%20SEO%20BANNER%20GOOGLE%20V2.png?v=1731337411246" />
 
 <!-- SEO-->
 <meta name="keywords" content="proximasports, proxima sports, sports proxima, proximasport, proxima sport, sport proxima" />
-  
   
   
     <style>
@@ -153,9 +152,40 @@ font-weight: bold;
 src: url("https://cdn.glitch.global/4d7db198-d06b-43a0-a17b-b43d16d2bbce/SaaSduo%20Button?v=1692822927520")
 format("opentype");
 }
+      
+      
+      
+                @media (max-width: 767px) {
+img {
+    width: 97% !important;
+    max-width: 200px !important;
+    margin-bottom: 50px !important;
+    margin-top: 25px !important;
+}
+            
+            .contentX {
+    width: 95% !important;
+}
+            
+            .zerod {
+    font-size: 14px !important;
+    line-height: 26px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+            
+            .back {
+    padding: 14px 20px 13px 21px !important;
+    font-size: 14px !important;
+    margin-top: 20px !important;
+}
+            
+     }
           
               .robe {
-                height: 100vh;
+                 height: 100vh;
                 text-align: center;
                     width: 100%;
     background-color: #52525247;
@@ -226,34 +256,6 @@ margin-top: 15px;
     transition-duration: 0s;
     background: #7357c1;
 }
-          @media (max-width: 767px) {
-img {
-    width: 97% !important;
-    max-width: 200px !important;
-    margin-bottom: 50px !important;
-    margin-top: 25px !important;
-}
-            
-            .contentX {
-    width: 95% !important;
-}
-            
-            .zerod {
-    font-size: 14px !important;
-    line-height: 26px !important;
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-}
-            
-            .back {
-    padding: 14px 20px 13px 21px !important;
-    font-size: 14px !important;
-    margin-top: 20px !important;
-}
-            
-     }
       
       
         button {
@@ -324,7 +326,7 @@ img {
     border-radius: 90px;
     cursor: pointer;
     white-space: nowrap;
-    font-size: 16px ;
+    font-size: 16px !important;
     font-family: "logicyclist13" !important;
     font-weight: 400;
     letter-spacing: 0px;
@@ -346,7 +348,7 @@ img {
       
       .zerod {
     text-align: center;
-    font-size: 17px;
+    font-size: 17px !important;
     font-family: "logicyclist13" !important;
     font-weight: 400;
     letter-spacing: 0px;
@@ -363,6 +365,15 @@ img {
     </style>
 </head>
 <body>
+  
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Vérification si l'utilisateur est sur mobile
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                window.location.href = "/";
+            }
+        });
+    </script>
      <div class="robe">
        
        
@@ -372,15 +383,17 @@ img {
     <a href="/"><img src="https://cdn.glitch.global/0c509f63-aab1-46c9-a6b3-5c658ca2a42b/Brouillon.svg?v=1728582252873" alt="Logo"></a>
     <div class="login-container">
       
-              <p class="zerod">
-Merci d'avoir complété notre formulaire. Vous serez contacté(e) sous 1 à 2 jour(s) ouvré(s). Si nécessaire, vous pouvez également nous contacter directement à mail@proximasport.com ou au +44 7723 501018. 
-      </p>
+              <p class="zerod">Please log in with the information provided by your contact to access the management of your projects and services.</p>
       
-  
+      
+        <input autofocus type="text" id="username" placeholder="Username" oninput="checkInput()">
+        <input type="password" id="password" placeholder="Password" oninput="checkPassword()">
+        <button id="loginBtn" onclick="showError()">Login</button>
+        <div class="error" id="errorMessage">Invalid Informations</div>
     </div> </div>       
        
-       <a href="/" class="back">
-            Retour
+       <a href="/eng" class="back">
+            Back
         </a>
 
     <script>
