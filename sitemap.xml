@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://proximasport.com/</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Error page -->
+    <url>
+        <loc>https://proximasport.com/404</loc>
+        <priority>0.1</priority>
+    </url>
+
+    <!-- Catalog pages -->
+    <url>
+        <loc>https://proximasport.com/catalog-eng</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://proximasport.com/catalog-es</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://proximasport.com/catalog-fr</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Confirmation pages -->
+    <url>
+        <loc>https://proximasport.com/confirmation</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://proximasport.com/confirmation-eng</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://proximasport.com/confirmation-es</loc>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Language-specific pages -->
+    <url>
+        <loc>https://proximasport.com/eng</loc>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://proximasport.com/es</loc>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Login pages -->
+    <url>
+        <loc>https://proximasport.com/login</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://proximasport.com/login-eng</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://proximasport.com/login-es</loc>
+        <priority>0.6</priority>
+    </url>
+</urlset>
